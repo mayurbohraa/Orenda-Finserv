@@ -1,0 +1,143 @@
+@import "tailwindcss";
+
+/* Brand and theme tokens */
+@theme {
+  --font-sans: "DM Sans", ui-sans-serif, system-ui, sans-serif;
+
+  --color-brand-900: #0F3D5E;
+  --color-brand-800: #154F7A;
+  --color-brand-700: #1a628f;
+  --color-brand-600: #1a6fa0;
+  --color-brand-500: #2b8bc0;
+  --color-brand-100: #e8f3fa;
+  --color-brand-50: #f0f7fc;
+
+  --color-surface: #f4f7fb;
+  --color-ink: #1a2b3c;
+  --color-muted: #6b7c8f;
+  --color-border: #D1DEE8;
+  --color-link: #2b7de9;
+
+  --color-status-pending-bg: #eef1f5;
+  --color-status-pending-fg: #5a6a7a;
+  --color-status-analysis-bg: #e8f0fe;
+  --color-status-analysis-fg: #2b6cb0;
+  --color-status-quote-bg: #fff4e5;
+  --color-status-quote-fg: #c47a1a;
+  --color-status-disbursed-bg: #e6f7ed;
+  --color-status-disbursed-fg: #1a7a45;
+
+  --color-toast-bg: #e8f8ef;
+  --color-toast-border: #9ad4b3;
+  --color-toast-fg: #1a7a45;
+
+  --color-readonly: #f0f5fa;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Full-viewport app shell */
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: var(--color-ink);
+  background: var(--color-surface);
+  -webkit-font-smoothing: antialiased;
+}
+
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+}
+
+/* Pointer on clickable controls */
+button:not(:disabled),
+[role='button']:not([aria-disabled='true']),
+[role='option'],
+[role='menuitem'],
+a[href] {
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+}
+
+/* Hide native scrollbar — ScrollInset paints the thumb */
+.scrollbar-none,
+.scroll-inset {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.scrollbar-none::-webkit-scrollbar,
+.scroll-inset::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+  background: transparent;
+}
+
+*::-webkit-scrollbar-button {
+  display: block !important;
+  width: 0 !important;
+  height: 0 !important;
+  background: transparent !important;
+  background-image: none !important;
+  border: 0 !important;
+}
+
+/* Motion utilities */
+@keyframes toast-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-toast-in {
+  animation: toast-in 0.28s ease-out;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.2s ease-out;
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(8px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.animate-slide-up {
+  animation: slide-up 0.22s ease-out;
+}

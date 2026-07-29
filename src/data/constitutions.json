@@ -1,0 +1,8 @@
+[
+  { "id": "sole_proprietor", "label": "Sole Proprietor" },
+  { "id": "partnership", "label": "Partnership" },
+  { "id": "private_limited", "label": "Private Limited" },
+  { "id": "salaried", "label": "Salaried" },
+  { "id": "self_employed", "label": "Self Employed" },
+  { "id": "professional", "label": "Professional" }
+]

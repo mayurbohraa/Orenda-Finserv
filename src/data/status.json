@@ -1,0 +1,6 @@
+[
+  { "id": "pending", "label": "Pending" },
+  { "id": "analysis_completed", "label": "Analysis Completed" },
+  { "id": "quote_generated", "label": "Quote Generated" },
+  { "id": "disbursed", "label": "Disbursed" }
+]

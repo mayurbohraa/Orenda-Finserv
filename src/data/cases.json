@@ -1,0 +1,1888 @@
+[
+  {
+    "id": "case-001",
+    "caseNumber": "001",
+    "caseName": "001-Arun Sharma",
+    "borrowerName": "Arun Sharma",
+    "caseCreatedBy": "Nandit Joshi",
+    "quoteGeneratedBy": "N/A",
+    "loanAmount": 725000,
+    "loanType": "Home Loan",
+    "constitution": "Salaried",
+    "status": "analysis_completed",
+    "city": "Mumbai",
+    "state": "Maharashtra",
+    "pincode": "400001",
+    "model": "Assisted Model",
+    "assignedCaseManager": "Vinay Kumar",
+    "phase": "Phase 1 of 4",
+    "phaseLabel": "Personal info",
+    "createdAt": "2026-06-20T10:00:00",
+    "coApplicant": null,
+    "activityLog": [
+      {
+        "id": "a1",
+        "title": "Personal Info Added",
+        "by": "Nandit Joshi (DSA)",
+        "timestamp": "20 June · 10:15 AM",
+        "dateGroup": "Today"
+      },
+      {
+        "id": "a2",
+        "title": "Case 001 Created",
+        "by": "Nandit Joshi (DSA)",
+        "timestamp": "20 June · 10:00 AM",
+        "dateGroup": "Today"
+      }
+    ],
+    "documents": [
+      {
+        "id": "doc-001-1",
+        "name": "Aadhaar_Card_Front.pdf",
+        "type": "PDF",
+        "size": "245 KB",
+        "uploadedAt": "20 June 2026",
+        "uploadedBy": "Nandit Joshi"
+      },
+      {
+        "id": "doc-001-2",
+        "name": "PAN_Card.pdf",
+        "type": "PDF",
+        "size": "128 KB",
+        "uploadedAt": "20 June 2026",
+        "uploadedBy": "Nandit Joshi"
+      },
+      {
+        "id": "doc-001-3",
+        "name": "Salary_Slip_May.pdf",
+        "type": "PDF",
+        "size": "412 KB",
+        "uploadedAt": "21 June 2026",
+        "uploadedBy": "Nandit Joshi"
+      }
+    ]
+  },
+  {
+    "id": "case-002",
+    "caseNumber": "002",
+    "caseName": "002-Dhruv Desai",
+    "borrowerName": "Dhruv Desai",
+    "caseCreatedBy": "Nandit Joshi",
+    "quoteGeneratedBy": "N/A",
+    "loanAmount": 1200000,
+    "loanType": "Personal Loan",
+    "constitution": "Sole Proprietor",
+    "status": "pending",
+    "city": "Ahmedabad",
+    "state": "Gujarat",
+    "pincode": "380015",
+    "model": "Assisted Model",
+    "assignedCaseManager": "Vinay Kumar",
+    "phase": "Phase 1 of 4",
+    "phaseLabel": "Personal info",
+    "createdAt": "2026-06-28T21:00:00",
+    "coApplicant": null,
+    "activityLog": [
+      {
+        "id": "b1",
+        "title": "Personal Info Added",
+        "by": "Vinay Kumar (DSA)",
+        "timestamp": "28 June · 9:15 PM",
+        "dateGroup": "Today"
+      },
+      {
+        "id": "b2",
+        "title": "Case 002 Created",
+        "by": "Vinay Kumar (DSA)",
+        "timestamp": "28 June · 9:00 PM",
+        "dateGroup": "Today"
+      }
+    ],
+    "documents": []
+  },
+  {
+    "id": "case-003",
+    "caseNumber": "003",
+    "caseName": "003-Rishabh Patel",
+    "borrowerName": "Rishabh Patel",
+    "caseCreatedBy": "Vidhisha Modi",
+    "quoteGeneratedBy": "N/A",
+    "loanAmount": 1875000,
+    "loanType": "Business Loan",
+    "constitution": "Partnership",
+    "status": "pending",
+    "city": "Surat",
+    "state": "Gujarat",
+    "pincode": "395001",
+    "model": "Booking Model",
+    "assignedCaseManager": "Vinay Kumar",
+    "phase": "Phase 1 of 4",
+    "phaseLabel": "Personal info",
+    "createdAt": "2026-06-22T11:00:00",
+    "coApplicant": null,
+    "activityLog": [
+      {
+        "id": "c1",
+        "title": "Case 003 Created",
+        "by": "Vidhisha Modi (DSA)",
+        "timestamp": "22 June · 11:00 AM",
+        "dateGroup": "Today"
+      }
+    ],
+    "documents": [
+      {
+        "id": "doc-003-1",
+        "name": "Bank_Statement_Q1.pdf",
+        "type": "PDF",
+        "size": "1.2 MB",
+        "uploadedAt": "15 June 2026",
+        "uploadedBy": "Vinay Kumar"
+      },
+      {
+        "id": "doc-003-2",
+        "name": "Property_Papers.pdf",
+        "type": "PDF",
+        "size": "890 KB",
+        "uploadedAt": "15 June 2026",
+        "uploadedBy": "Vinay Kumar"
+      }
+    ]
+  },
+  {
+    "id": "case-004",
+    "caseNumber": "004",
+    "caseName": "004-Fena F",
+    "borrowerName": "Fena F",
+    "caseCreatedBy": "Megha H Vala",
+    "quoteGeneratedBy": "N/A",
+    "loanAmount": 2500000,
+    "loanType": "Loan Against Property",
+    "constitution": "Self Employed",
+    "status": "quote_generated",
+    "city": "Ahmedabad",
+    "state": "Gujarat",
+    "pincode": "380001",
+    "model": "Assisted Model",
+    "assignedCaseManager": "Vinay Kumar",
+    "phase": "Phase 2 of 4",
+    "phaseLabel": "Documents",
+    "createdAt": "2026-06-18T09:30:00",
+    "coApplicant": null,
+    "activityLog": [
+      {
+        "id": "d1",
+        "title": "Quote Generated",
+        "by": "Megha H Vala (Credit)",
+        "timestamp": "19 June · 4:00 PM",
+        "dateGroup": "Yesterday"
+      },
+      {
+        "id": "d2",
+        "title": "Case 004 Created",
+        "by": "Megha H Vala (DSA)",
+        "timestamp": "18 June · 9:30 AM",
+        "dateGroup": "Yesterday"
+      }
+    ],
+    "documents": []
+  },
+  {
+    "id": "case-005",
+    "caseNumber": "005",
+    "caseName": "005-Nakul Mehta",
+    "borrowerName": "Nakul Mehta",
+    "caseCreatedBy": "Jitendra.N",
+    "quoteGeneratedBy": "N/A",
+    "loanAmount": 3250000,
+    "loanType": "Home Loan",
+    "constitution": "Salaried",
+    "status": "disbursed",
+    "city": "Vadodara",
+    "state": "Gujarat",
+    "pincode": "390001",
+    "model": "Assisted Model",
+    "assignedCaseManager": "Vinay Kumar",
+    "phase": "Phase 4 of 4",
+    "phaseLabel": "Disbursal",
+    "createdAt": "2026-05-10T08:00:00",
+    "coApplicant": {
+      "name": "Neha Mehta",
+      "loanType": "Home Loan",
+      "constitution": "Salaried",
+      "loanAmount": 3250000,
+      "pincode": "390001",
+      "city": "Vadodara",
+      "state": "Gujarat",
+      "relationship": "Wife",
+      "model": "Assisted Model"
+    },
+    "activityLog": [
+      {
+        "id": "e1",
+        "title": "Loan Disbursed",
+        "by": "Jitendra.N (Ops)",
+        "timestamp": "15 June · 11:00 AM",
+        "dateGroup": "Earlier"
+      },
+      {
+        "id": "e2",
+        "title": "Co-Applicant Added",
+        "by": "Jitendra.N (DSA)",
+        "timestamp": "12 May · 3:30 PM",
+        "dateGroup": "Earlier"
+      },
+      {
+        "id": "e3",
+        "title": "Case 005 Created",
+        "by": "Jitendra.N (DSA)",
+        "timestamp": "10 May · 8:00 AM",
+        "dateGroup": "Earlier"
+      }
+    ],
+    "documents": [
+      {
+        "id": "doc-005-1",
+        "name": "ITR_FY24.pdf",
+        "type": "PDF",
+        "size": "640 KB",
+        "uploadedAt": "12 May 2026",
+        "uploadedBy": "Jitendra.N"
+      }
+    ]
+  },
+  {
+    "id": "case-006",
+    "caseNumber": "006",
+    "caseName": "006-Neha Kapoor",
+    "borrowerName": "Neha Kapoor",
+    "caseCreatedBy": "Nandit Joshi",
+    "quoteGeneratedBy": "N/A",
+    "loanAmount": 850000,
+    "loanType": "Professional Loan",
+    "constitution": "Professional",
+    "status": "analysis_completed",
+    "city": "Delhi",
+    "state": "Delhi",
+    "pincode": "110001",
+    "model": "Booking Model",
+    "assignedCaseManager": "Vinay Kumar",
+    "phase": "Phase 1 of 4",
+    "phaseLabel": "Personal info",
+    "createdAt": "2026-06-23T16:00:00",
+    "coApplicant": null,
+    "activityLog": [
+      {
+        "id": "f1",
+        "title": "Personal Info Added",
+        "by": "Nandit Joshi (DSA)",
+        "timestamp": "23 June · 4:20 PM",
+        "dateGroup": "Today"
+      },
+      {
+        "id": "f2",
+        "title": "Case 006 Created",
+        "by": "Nandit Joshi (DSA)",
+        "timestamp": "23 June · 4:00 PM",
+        "dateGroup": "Today"
+      }
+    ],
+    "documents": [
+      {
+        "id": "doc-006-1",
+        "name": "Passport.pdf",
+        "type": "PDF",
+        "size": "320 KB",
+        "uploadedAt": "18 June 2026",
+        "uploadedBy": "Nandit Joshi"
+      },
+      {
+        "id": "doc-006-2",
+        "name": "Form_16.pdf",
+        "type": "PDF",
+        "size": "210 KB",
+        "uploadedAt": "18 June 2026",
+        "uploadedBy": "Nandit Joshi"
+      },
+      {
+        "id": "doc-006-3",
+        "name": "Address_Proof.jpg",
+        "type": "JPG",
+        "size": "1.1 MB",
+        "uploadedAt": "19 June 2026",
+        "uploadedBy": "Nandit Joshi"
+      }
+    ]
+  },
+  {
+    "id": "case-007",
+    "caseNumber": "007",
+    "caseName": "007-Vikram Singh",
+    "borrowerName": "Vikram Singh",
+    "caseCreatedBy": "Vidhisha Modi",
+    "quoteGeneratedBy": "N/A",
+    "loanAmount": 2100000,
+    "loanType": "Business Loan",
+    "constitution": "Partnership",
+    "status": "pending",
+    "city": "Jaipur",
+    "state": "Rajasthan",
+    "pincode": "302001",
+    "model": "Assisted Model",
+    "assignedCaseManager": "Vinay Kumar",
+    "phase": "Phase 1 of 4",
+    "phaseLabel": "Personal info",
+    "createdAt": "2026-06-24T09:00:00",
+    "coApplicant": null,
+    "activityLog": [
+      {
+        "id": "g1",
+        "title": "Case 007 Created",
+        "by": "Vidhisha Modi (DSA)",
+        "timestamp": "24 June · 9:00 AM",
+        "dateGroup": "Today"
+      }
+    ],
+    "documents": []
+  },
+  {
+    "id": "case-008",
+    "caseNumber": "008",
+    "caseName": "008-Meera Iyer",
+    "borrowerName": "Meera Iyer",
+    "caseCreatedBy": "Megha H Vala",
+    "quoteGeneratedBy": "Ananya Shah",
+    "loanAmount": 1750000,
+    "loanType": "Home Loan",
+    "constitution": "Salaried",
+    "status": "quote_generated",
+    "city": "Chennai",
+    "state": "Tamil Nadu",
+    "pincode": "600001",
+    "model": "Lead-based Model",
+    "assignedCaseManager": "Vinay Kumar",
+    "phase": "Phase 2 of 4",
+    "phaseLabel": "Documents",
+    "createdAt": "2026-06-15T12:00:00",
+    "coApplicant": null,
+    "activityLog": [
+      {
+        "id": "h1",
+        "title": "Quote Generated",
+        "by": "Ananya Shah (Credit)",
+        "timestamp": "17 June · 1:00 PM",
+        "dateGroup": "Earlier"
+      },
+      {
+        "id": "h2",
+        "title": "Case 008 Created",
+        "by": "Megha H Vala (DSA)",
+        "timestamp": "15 June · 12:00 PM",
+        "dateGroup": "Earlier"
+      }
+    ],
+    "documents": []
+  },
+  {
+    "id": "case-009",
+    "caseNumber": "009",
+    "caseName": "009-Amit Joshi",
+    "borrowerName": "Amit Joshi",
+    "caseCreatedBy": "Nandit Joshi",
+    "quoteGeneratedBy": "N/A",
+    "loanAmount": 980000,
+    "loanType": "Personal Loan",
+    "constitution": "Salaried",
+    "status": "pending",
+    "city": "Pune",
+    "state": "Maharashtra",
+    "pincode": "411001",
+    "model": "Assisted Model",
+    "assignedCaseManager": "Vinay Kumar",
+    "phase": "Phase 1 of 4",
+    "phaseLabel": "Personal info",
+    "createdAt": "2026-06-25T10:00:00",
+    "coApplicant": null,
+    "activityLog": [
+      {
+        "id": "i1",
+        "title": "Case 009 Created",
+        "by": "Nandit Joshi (DSA)",
+        "timestamp": "25 June · 10:00 AM",
+        "dateGroup": "Today"
+      }
+    ],
+    "documents": []
+  },
+  {
+    "id": "case-010",
+    "caseNumber": "010",
+    "caseName": "010-Sneha Patel",
+    "borrowerName": "Sneha Patel",
+    "caseCreatedBy": "Jitendra.N",
+    "quoteGeneratedBy": "N/A",
+    "loanAmount": 4500000,
+    "loanType": "Business Loan",
+    "constitution": "Sole Proprietor",
+    "status": "analysis_completed",
+    "city": "Ahmedabad",
+    "state": "Gujarat",
+    "pincode": "380015",
+    "model": "Assisted Model",
+    "assignedCaseManager": "Vinay Kumar",
+    "phase": "Phase 1 of 4",
+    "phaseLabel": "Personal info",
+    "createdAt": "2026-06-26T14:00:00",
+    "coApplicant": null,
+    "activityLog": [
+      {
+        "id": "j1",
+        "title": "Personal Info Added",
+        "by": "Jitendra.N (DSA)",
+        "timestamp": "26 June · 2:20 PM",
+        "dateGroup": "Today"
+      },
+      {
+        "id": "j2",
+        "title": "Case 010 Created",
+        "by": "Jitendra.N (DSA)",
+        "timestamp": "26 June · 2:00 PM",
+        "dateGroup": "Today"
+      }
+    ],
+    "documents": []
+  },
+  {
+    "id": "case-011",
+    "caseNumber": "011",
+    "caseName": "011-Isha Kulkarni",
+    "borrowerName": "Isha Kulkarni",
+    "caseCreatedBy": "Nandit Joshi",
+    "quoteGeneratedBy": "N/A",
+    "loanAmount": 1650000,
+    "loanType": "Home Loan",
+    "constitution": "Salaried",
+    "status": "analysis_completed",
+    "city": "Pune",
+    "state": "Maharashtra",
+    "pincode": "411001",
+    "model": "Assisted Model",
+    "assignedCaseManager": "Vinay Kumar",
+    "phase": "Phase 1 of 4",
+    "phaseLabel": "Personal info",
+    "createdAt": "2026-06-26T12:00:00",
+    "coApplicant": null,
+    "activityLog": [
+      {
+        "id": "j1",
+        "title": "Case 011 Created",
+        "by": "Nandit Joshi (DSA)",
+        "timestamp": "26 June · 12:00 PM",
+        "dateGroup": "Today"
+      }
+    ],
+    "documents": []
+  },
+  {
+    "id": "case-012",
+    "caseNumber": "012",
+    "caseName": "012-Aditya Singh",
+    "borrowerName": "Aditya Singh",
+    "caseCreatedBy": "Vidhisha Modi",
+    "quoteGeneratedBy": "N/A",
+    "loanAmount": 31000000,
+    "loanType": "Loan Against Property",
+    "constitution": "Self Employed",
+    "status": "quote_generated",
+    "city": "Delhi",
+    "state": "Delhi",
+    "pincode": "110001",
+    "model": "Lead-based Model",
+    "assignedCaseManager": "Vinay Kumar",
+    "phase": "Phase 1 of 4",
+    "phaseLabel": "Personal info",
+    "createdAt": "2026-06-27T14:00:00",
+    "coApplicant": null,
+    "activityLog": [
+      {
+        "id": "l1",
+        "title": "Case 012 Created",
+        "by": "Vidhisha Modi (DSA)",
+        "timestamp": "27 June · 2:00 PM",
+        "dateGroup": "Today"
+      }
+    ],
+    "documents": []
+  },
+  {
+    "id": "case-013",
+    "caseNumber": "013",
+    "caseName": "013-Kavya Nair",
+    "borrowerName": "Kavya Nair",
+    "caseCreatedBy": "Megha H Vala",
+    "quoteGeneratedBy": "N/A",
+    "loanAmount": 27500000,
+    "loanType": "Business Loan",
+    "constitution": "Private Limited",
+    "status": "disbursed",
+    "city": "Bengaluru",
+    "state": "Karnataka",
+    "pincode": "560001",
+    "model": "Booking Model",
+    "assignedCaseManager": "Vinay Kumar",
+    "phase": "Phase 1 of 4",
+    "phaseLabel": "Personal info",
+    "createdAt": "2026-06-27T16:00:00",
+    "coApplicant": null,
+    "activityLog": [
+      {
+        "id": "m1",
+        "title": "Case 013 Created",
+        "by": "Megha H Vala (DSA)",
+        "timestamp": "27 June · 4:00 PM",
+        "dateGroup": "Today"
+      }
+    ],
+    "documents": []
+  },
+  {
+    "id": "case-014",
+    "caseNumber": "014",
+    "caseName": "014-Rohan Mehta",
+    "borrowerName": "Rohan Mehta",
+    "caseCreatedBy": "Jitendra.N",
+    "quoteGeneratedBy": "N/A",
+    "loanAmount": 890000,
+    "loanType": "Personal Loan",
+    "constitution": "Salaried",
+    "status": "pending",
+    "city": "Ahmedabad",
+    "state": "Gujarat",
+    "pincode": "380015",
+    "model": "Assisted Model",
+    "assignedCaseManager": "Vinay Kumar",
+    "phase": "Phase 1 of 4",
+    "phaseLabel": "Personal info",
+    "createdAt": "2026-06-28T09:00:00",
+    "coApplicant": null,
+    "activityLog": [
+      {
+        "id": "n1",
+        "title": "Case 014 Created",
+        "by": "Jitendra.N (DSA)",
+        "timestamp": "28 June · 9:00 AM",
+        "dateGroup": "Today"
+      }
+    ],
+    "documents": []
+  },
+  {
+    "id": "case-015",
+    "caseNumber": "015",
+    "caseName": "015-Priya Shah",
+    "borrowerName": "Priya Shah",
+    "caseCreatedBy": "Nandit Joshi",
+    "quoteGeneratedBy": "N/A",
+    "loanAmount": 725000,
+    "loanType": "Home Loan",
+    "constitution": "Salaried",
+    "status": "pending",
+    "city": "Mumbai",
+    "state": "Maharashtra",
+    "pincode": "400001",
+    "model": "Assisted Model",
+    "assignedCaseManager": "Vinay Kumar",
+    "phase": "Phase 1 of 4",
+    "phaseLabel": "Personal info",
+    "createdAt": "2026-06-10T10:00:00",
+    "coApplicant": null,
+    "activityLog": [
+      {
+        "id": "x015-1",
+        "title": "Case 015 Created",
+        "by": "Nandit Joshi (DSA)",
+        "timestamp": "10 June · 10:00 AM",
+        "dateGroup": "Today"
+      }
+    ],
+    "documents": []
+  },
+  {
+    "id": "case-016",
+    "caseNumber": "016",
+    "caseName": "016-Kabir Malhotra",
+    "borrowerName": "Kabir Malhotra",
+    "caseCreatedBy": "Vidhisha Modi",
+    "quoteGeneratedBy": "N/A",
+    "loanAmount": 1201000,
+    "loanType": "Personal Loan",
+    "constitution": "Sole Proprietor",
+    "status": "analysis_completed",
+    "city": "Ahmedabad",
+    "state": "Gujarat",
+    "pincode": "380015",
+    "model": "Assisted Model",
+    "assignedCaseManager": "Vinay Kumar",
+    "phase": "Phase 1 of 4",
+    "phaseLabel": "Personal info",
+    "createdAt": "2026-06-11T10:00:00",
+    "coApplicant": null,
+    "activityLog": [
+      {
+        "id": "x016-1",
+        "title": "Case 016 Created",
+        "by": "Vidhisha Modi (DSA)",
+        "timestamp": "11 June · 10:00 AM",
+        "dateGroup": "Today"
+      }
+    ],
+    "documents": []
+  },
+  {
+    "id": "case-017",
+    "caseNumber": "017",
+    "caseName": "017-Ananya Reddy",
+    "borrowerName": "Ananya Reddy",
+    "caseCreatedBy": "Megha H Vala",
+    "quoteGeneratedBy": "Orenda Ops",
+    "loanAmount": 1877000,
+    "loanType": "Business Loan",
+    "constitution": "Partnership",
+    "status": "quote_generated",
+    "city": "Pune",
+    "state": "Maharashtra",
+    "pincode": "411001",
+    "model": "Assisted Model",
+    "assignedCaseManager": "Vinay Kumar",
+    "phase": "Phase 1 of 4",
+    "phaseLabel": "Personal info",
+    "createdAt": "2026-06-12T10:00:00",
+    "coApplicant": null,
+    "activityLog": [
+      {
+        "id": "x017-1",
+        "title": "Case 017 Created",
+        "by": "Megha H Vala (DSA)",
+        "timestamp": "12 June · 10:00 AM",
+        "dateGroup": "Today"
+      }
+    ],
+    "documents": []
+  },
+  {
+    "id": "case-018",
+    "caseNumber": "018",
+    "caseName": "018-Devansh Gupta",
+    "borrowerName": "Devansh Gupta",
+    "caseCreatedBy": "Jitendra.N",
+    "quoteGeneratedBy": "Orenda Ops",
+    "loanAmount": 2503000,
+    "loanType": "Loan Against Property",
+    "constitution": "Self Employed",
+    "status": "disbursed",
+    "city": "Delhi",
+    "state": "Delhi",
+    "pincode": "110001",
+    "model": "Assisted Model",
+    "assignedCaseManager": "Vinay Kumar",
+    "phase": "Phase 1 of 4",
+    "phaseLabel": "Personal info",
+    "createdAt": "2026-06-13T10:00:00",
+    "coApplicant": null,
+    "activityLog": [
+      {
+        "id": "x018-1",
+        "title": "Case 018 Created",
+        "by": "Jitendra.N (DSA)",
+        "timestamp": "13 June · 10:00 AM",
+        "dateGroup": "Today"
+      }
+    ],
+    "documents": []
+  },
+  {
+    "id": "case-019",
+    "caseNumber": "019",
+    "caseName": "019-Ishita Bose",
+    "borrowerName": "Ishita Bose",
+    "caseCreatedBy": "Vinay Kumar",
+    "quoteGeneratedBy": "N/A",
+    "loanAmount": 3104000,
+    "loanType": "Professional Loan",
+    "constitution": "Private Limited",
+    "status": "pending",
+    "city": "Bengaluru",
+    "state": "Karnataka",
+    "pincode": "560001",
+    "model": "Assisted Model",
+    "assignedCaseManager": "Vinay Kumar",
+    "phase": "Phase 1 of 4",
+    "phaseLabel": "Personal info",
+    "createdAt": "2026-06-14T10:00:00",
+    "coApplicant": null,
+    "activityLog": [
+      {
+        "id": "x019-1",
+        "title": "Case 019 Created",
+        "by": "Vinay Kumar (DSA)",
+        "timestamp": "14 June · 10:00 AM",
+        "dateGroup": "Today"
+      }
+    ],
+    "documents": []
+  },
+  {
+    "id": "case-020",
+    "caseNumber": "020",
+    "caseName": "020-Arjun Nair",
+    "borrowerName": "Arjun Nair",
+    "caseCreatedBy": "Nandit Joshi",
+    "quoteGeneratedBy": "N/A",
+    "loanAmount": 4505000,
+    "loanType": "Home Loan",
+    "constitution": "Salaried",
+    "status": "analysis_completed",
+    "city": "Surat",
+    "state": "Gujarat",
+    "pincode": "395001",
+    "model": "Assisted Model",
+    "assignedCaseManager": "Vinay Kumar",
+    "phase": "Phase 1 of 4",
+    "phaseLabel": "Personal info",
+    "createdAt": "2026-06-15T10:00:00",
+    "coApplicant": null,
+    "activityLog": [
+      {
+        "id": "x020-1",
+        "title": "Case 020 Created",
+        "by": "Nandit Joshi (DSA)",
+        "timestamp": "15 June · 10:00 AM",
+        "dateGroup": "Today"
+      }
+    ],
+    "documents": []
+  },
+  {
+    "id": "case-021",
+    "caseNumber": "021",
+    "caseName": "021-Sanya Kapoor",
+    "borrowerName": "Sanya Kapoor",
+    "caseCreatedBy": "Vidhisha Modi",
+    "quoteGeneratedBy": "Orenda Ops",
+    "loanAmount": 896000,
+    "loanType": "Personal Loan",
+    "constitution": "Sole Proprietor",
+    "status": "quote_generated",
+    "city": "Mumbai",
+    "state": "Maharashtra",
+    "pincode": "400001",
+    "model": "Assisted Model",
+    "assignedCaseManager": "Vinay Kumar",
+    "phase": "Phase 1 of 4",
+    "phaseLabel": "Personal info",
+    "createdAt": "2026-06-16T10:00:00",
+    "coApplicant": null,
+    "activityLog": [
+      {
+        "id": "x021-1",
+        "title": "Case 021 Created",
+        "by": "Vidhisha Modi (DSA)",
+        "timestamp": "16 June · 10:00 AM",
+        "dateGroup": "Today"
+      }
+    ],
+    "documents": []
+  },
+  {
+    "id": "case-022",
+    "caseNumber": "022",
+    "caseName": "022-Harsh Patel",
+    "borrowerName": "Harsh Patel",
+    "caseCreatedBy": "Megha H Vala",
+    "quoteGeneratedBy": "Orenda Ops",
+    "loanAmount": 1657000,
+    "loanType": "Business Loan",
+    "constitution": "Partnership",
+    "status": "disbursed",
+    "city": "Ahmedabad",
+    "state": "Gujarat",
+    "pincode": "380015",
+    "model": "Assisted Model",
+    "assignedCaseManager": "Vinay Kumar",
+    "phase": "Phase 1 of 4",
+    "phaseLabel": "Personal info",
+    "createdAt": "2026-06-17T10:00:00",
+    "coApplicant": null,
+    "activityLog": [
+      {
+        "id": "x022-1",
+        "title": "Case 022 Created",
+        "by": "Megha H Vala (DSA)",
+        "timestamp": "17 June · 10:00 AM",
+        "dateGroup": "Today"
+      }
+    ],
+    "documents": []
+  },
+  {
+    "id": "case-023",
+    "caseNumber": "023",
+    "caseName": "023-Myra Singh",
+    "borrowerName": "Myra Singh",
+    "caseCreatedBy": "Jitendra.N",
+    "quoteGeneratedBy": "N/A",
+    "loanAmount": 988000,
+    "loanType": "Loan Against Property",
+    "constitution": "Self Employed",
+    "status": "pending",
+    "city": "Pune",
+    "state": "Maharashtra",
+    "pincode": "411001",
+    "model": "Assisted Model",
+    "assignedCaseManager": "Vinay Kumar",
+    "phase": "Phase 1 of 4",
+    "phaseLabel": "Personal info",
+    "createdAt": "2026-06-18T10:00:00",
+    "coApplicant": null,
+    "activityLog": [
+      {
+        "id": "x023-1",
+        "title": "Case 023 Created",
+        "by": "Jitendra.N (DSA)",
+        "timestamp": "18 June · 10:00 AM",
+        "dateGroup": "Today"
+      }
+    ],
+    "documents": []
+  },
+  {
+    "id": "case-024",
+    "caseNumber": "024",
+    "caseName": "024-Yash Thakur",
+    "borrowerName": "Yash Thakur",
+    "caseCreatedBy": "Vinay Kumar",
+    "quoteGeneratedBy": "N/A",
+    "loanAmount": 2759000,
+    "loanType": "Professional Loan",
+    "constitution": "Private Limited",
+    "status": "analysis_completed",
+    "city": "Delhi",
+    "state": "Delhi",
+    "pincode": "110001",
+    "model": "Assisted Model",
+    "assignedCaseManager": "Vinay Kumar",
+    "phase": "Phase 1 of 4",
+    "phaseLabel": "Personal info",
+    "createdAt": "2026-06-19T10:00:00",
+    "coApplicant": null,
+    "activityLog": [
+      {
+        "id": "x024-1",
+        "title": "Case 024 Created",
+        "by": "Vinay Kumar (DSA)",
+        "timestamp": "19 June · 10:00 AM",
+        "dateGroup": "Today"
+      }
+    ],
+    "documents": []
+  },
+  {
+    "id": "case-025",
+    "caseNumber": "025",
+    "caseName": "025-Diya Mehta",
+    "borrowerName": "Diya Mehta",
+    "caseCreatedBy": "Nandit Joshi",
+    "quoteGeneratedBy": "Orenda Ops",
+    "loanAmount": 5210000,
+    "loanType": "Home Loan",
+    "constitution": "Salaried",
+    "status": "quote_generated",
+    "city": "Bengaluru",
+    "state": "Karnataka",
+    "pincode": "560001",
+    "model": "Assisted Model",
+    "assignedCaseManager": "Vinay Kumar",
+    "phase": "Phase 1 of 4",
+    "phaseLabel": "Personal info",
+    "createdAt": "2026-06-20T10:00:00",
+    "coApplicant": null,
+    "activityLog": [
+      {
+        "id": "x025-1",
+        "title": "Case 025 Created",
+        "by": "Nandit Joshi (DSA)",
+        "timestamp": "20 June · 10:00 AM",
+        "dateGroup": "Today"
+      }
+    ],
+    "documents": []
+  },
+  {
+    "id": "case-026",
+    "caseNumber": "026",
+    "caseName": "026-Rohan Joshi",
+    "borrowerName": "Rohan Joshi",
+    "caseCreatedBy": "Vidhisha Modi",
+    "quoteGeneratedBy": "Orenda Ops",
+    "loanAmount": 2111000,
+    "loanType": "Personal Loan",
+    "constitution": "Sole Proprietor",
+    "status": "disbursed",
+    "city": "Surat",
+    "state": "Gujarat",
+    "pincode": "395001",
+    "model": "Assisted Model",
+    "assignedCaseManager": "Vinay Kumar",
+    "phase": "Phase 1 of 4",
+    "phaseLabel": "Personal info",
+    "createdAt": "2026-06-21T10:00:00",
+    "coApplicant": null,
+    "activityLog": [
+      {
+        "id": "x026-1",
+        "title": "Case 026 Created",
+        "by": "Vidhisha Modi (DSA)",
+        "timestamp": "21 June · 10:00 AM",
+        "dateGroup": "Today"
+      }
+    ],
+    "documents": []
+  },
+  {
+    "id": "case-027",
+    "caseNumber": "027",
+    "caseName": "027-Tara Iyer",
+    "borrowerName": "Tara Iyer",
+    "caseCreatedBy": "Megha H Vala",
+    "quoteGeneratedBy": "N/A",
+    "loanAmount": 737000,
+    "loanType": "Business Loan",
+    "constitution": "Partnership",
+    "status": "pending",
+    "city": "Mumbai",
+    "state": "Maharashtra",
+    "pincode": "400001",
+    "model": "Assisted Model",
+    "assignedCaseManager": "Vinay Kumar",
+    "phase": "Phase 1 of 4",
+    "phaseLabel": "Personal info",
+    "createdAt": "2026-06-22T10:00:00",
+    "coApplicant": null,
+    "activityLog": [
+      {
+        "id": "x027-1",
+        "title": "Case 027 Created",
+        "by": "Megha H Vala (DSA)",
+        "timestamp": "22 June · 10:00 AM",
+        "dateGroup": "Today"
+      }
+    ],
+    "documents": []
+  },
+  {
+    "id": "case-028",
+    "caseNumber": "028",
+    "caseName": "028-Kunal Verma",
+    "borrowerName": "Kunal Verma",
+    "caseCreatedBy": "Jitendra.N",
+    "quoteGeneratedBy": "N/A",
+    "loanAmount": 1213000,
+    "loanType": "Loan Against Property",
+    "constitution": "Self Employed",
+    "status": "analysis_completed",
+    "city": "Ahmedabad",
+    "state": "Gujarat",
+    "pincode": "380015",
+    "model": "Assisted Model",
+    "assignedCaseManager": "Vinay Kumar",
+    "phase": "Phase 1 of 4",
+    "phaseLabel": "Personal info",
+    "createdAt": "2026-06-23T10:00:00",
+    "coApplicant": null,
+    "activityLog": [
+      {
+        "id": "x028-1",
+        "title": "Case 028 Created",
+        "by": "Jitendra.N (DSA)",
+        "timestamp": "23 June · 10:00 AM",
+        "dateGroup": "Today"
+      }
+    ],
+    "documents": []
+  },
+  {
+    "id": "case-029",
+    "caseNumber": "029",
+    "caseName": "029-Aisha Khan",
+    "borrowerName": "Aisha Khan",
+    "caseCreatedBy": "Vinay Kumar",
+    "quoteGeneratedBy": "Orenda Ops",
+    "loanAmount": 1889000,
+    "loanType": "Professional Loan",
+    "constitution": "Private Limited",
+    "status": "quote_generated",
+    "city": "Pune",
+    "state": "Maharashtra",
+    "pincode": "411001",
+    "model": "Assisted Model",
+    "assignedCaseManager": "Vinay Kumar",
+    "phase": "Phase 1 of 4",
+    "phaseLabel": "Personal info",
+    "createdAt": "2026-06-24T10:00:00",
+    "coApplicant": null,
+    "activityLog": [
+      {
+        "id": "x029-1",
+        "title": "Case 029 Created",
+        "by": "Vinay Kumar (DSA)",
+        "timestamp": "24 June · 10:00 AM",
+        "dateGroup": "Today"
+      }
+    ],
+    "documents": []
+  },
+  {
+    "id": "case-030",
+    "caseNumber": "030",
+    "caseName": "030-Vivek Rao",
+    "borrowerName": "Vivek Rao",
+    "caseCreatedBy": "Nandit Joshi",
+    "quoteGeneratedBy": "Orenda Ops",
+    "loanAmount": 2515000,
+    "loanType": "Home Loan",
+    "constitution": "Salaried",
+    "status": "disbursed",
+    "city": "Delhi",
+    "state": "Delhi",
+    "pincode": "110001",
+    "model": "Assisted Model",
+    "assignedCaseManager": "Vinay Kumar",
+    "phase": "Phase 1 of 4",
+    "phaseLabel": "Personal info",
+    "createdAt": "2026-06-25T10:00:00",
+    "coApplicant": null,
+    "activityLog": [
+      {
+        "id": "x030-1",
+        "title": "Case 030 Created",
+        "by": "Nandit Joshi (DSA)",
+        "timestamp": "25 June · 10:00 AM",
+        "dateGroup": "Today"
+      }
+    ],
+    "documents": []
+  },
+  {
+    "id": "case-031",
+    "caseNumber": "031",
+    "caseName": "031-Naina Desai",
+    "borrowerName": "Naina Desai",
+    "caseCreatedBy": "Vidhisha Modi",
+    "quoteGeneratedBy": "N/A",
+    "loanAmount": 3116000,
+    "loanType": "Personal Loan",
+    "constitution": "Sole Proprietor",
+    "status": "pending",
+    "city": "Bengaluru",
+    "state": "Karnataka",
+    "pincode": "560001",
+    "model": "Assisted Model",
+    "assignedCaseManager": "Vinay Kumar",
+    "phase": "Phase 1 of 4",
+    "phaseLabel": "Personal info",
+    "createdAt": "2026-06-26T10:00:00",
+    "coApplicant": null,
+    "activityLog": [
+      {
+        "id": "x031-1",
+        "title": "Case 031 Created",
+        "by": "Vidhisha Modi (DSA)",
+        "timestamp": "26 June · 10:00 AM",
+        "dateGroup": "Today"
+      }
+    ],
+    "documents": []
+  },
+  {
+    "id": "case-032",
+    "caseNumber": "032",
+    "caseName": "032-Siddharth Jain",
+    "borrowerName": "Siddharth Jain",
+    "caseCreatedBy": "Megha H Vala",
+    "quoteGeneratedBy": "N/A",
+    "loanAmount": 4517000,
+    "loanType": "Business Loan",
+    "constitution": "Partnership",
+    "status": "analysis_completed",
+    "city": "Surat",
+    "state": "Gujarat",
+    "pincode": "395001",
+    "model": "Assisted Model",
+    "assignedCaseManager": "Vinay Kumar",
+    "phase": "Phase 1 of 4",
+    "phaseLabel": "Personal info",
+    "createdAt": "2026-06-27T10:00:00",
+    "coApplicant": null,
+    "activityLog": [
+      {
+        "id": "x032-1",
+        "title": "Case 032 Created",
+        "by": "Megha H Vala (DSA)",
+        "timestamp": "27 June · 10:00 AM",
+        "dateGroup": "Today"
+      }
+    ],
+    "documents": []
+  },
+  {
+    "id": "case-033",
+    "caseNumber": "033",
+    "caseName": "033-Pooja Bhatt",
+    "borrowerName": "Pooja Bhatt",
+    "caseCreatedBy": "Jitendra.N",
+    "quoteGeneratedBy": "Orenda Ops",
+    "loanAmount": 908000,
+    "loanType": "Loan Against Property",
+    "constitution": "Self Employed",
+    "status": "quote_generated",
+    "city": "Mumbai",
+    "state": "Maharashtra",
+    "pincode": "400001",
+    "model": "Assisted Model",
+    "assignedCaseManager": "Vinay Kumar",
+    "phase": "Phase 1 of 4",
+    "phaseLabel": "Personal info",
+    "createdAt": "2026-06-10T10:00:00",
+    "coApplicant": null,
+    "activityLog": [
+      {
+        "id": "x033-1",
+        "title": "Case 033 Created",
+        "by": "Jitendra.N (DSA)",
+        "timestamp": "10 June · 10:00 AM",
+        "dateGroup": "Today"
+      }
+    ],
+    "documents": []
+  },
+  {
+    "id": "case-034",
+    "caseNumber": "034",
+    "caseName": "034-Manav Shah",
+    "borrowerName": "Manav Shah",
+    "caseCreatedBy": "Vinay Kumar",
+    "quoteGeneratedBy": "Orenda Ops",
+    "loanAmount": 1669000,
+    "loanType": "Professional Loan",
+    "constitution": "Private Limited",
+    "status": "disbursed",
+    "city": "Ahmedabad",
+    "state": "Gujarat",
+    "pincode": "380015",
+    "model": "Assisted Model",
+    "assignedCaseManager": "Vinay Kumar",
+    "phase": "Phase 1 of 4",
+    "phaseLabel": "Personal info",
+    "createdAt": "2026-06-11T10:00:00",
+    "coApplicant": null,
+    "activityLog": [
+      {
+        "id": "x034-1",
+        "title": "Case 034 Created",
+        "by": "Vinay Kumar (DSA)",
+        "timestamp": "11 June · 10:00 AM",
+        "dateGroup": "Today"
+      }
+    ],
+    "documents": []
+  },
+  {
+    "id": "case-035",
+    "caseNumber": "035",
+    "caseName": "035-Riya Chopra",
+    "borrowerName": "Riya Chopra",
+    "caseCreatedBy": "Nandit Joshi",
+    "quoteGeneratedBy": "N/A",
+    "loanAmount": 1000000,
+    "loanType": "Home Loan",
+    "constitution": "Salaried",
+    "status": "pending",
+    "city": "Pune",
+    "state": "Maharashtra",
+    "pincode": "411001",
+    "model": "Assisted Model",
+    "assignedCaseManager": "Vinay Kumar",
+    "phase": "Phase 1 of 4",
+    "phaseLabel": "Personal info",
+    "createdAt": "2026-06-12T10:00:00",
+    "coApplicant": null,
+    "activityLog": [
+      {
+        "id": "x035-1",
+        "title": "Case 035 Created",
+        "by": "Nandit Joshi (DSA)",
+        "timestamp": "12 June · 10:00 AM",
+        "dateGroup": "Today"
+      }
+    ],
+    "documents": []
+  },
+  {
+    "id": "case-036",
+    "caseNumber": "036",
+    "caseName": "036-Aarav Pillai",
+    "borrowerName": "Aarav Pillai",
+    "caseCreatedBy": "Vidhisha Modi",
+    "quoteGeneratedBy": "N/A",
+    "loanAmount": 2771000,
+    "loanType": "Personal Loan",
+    "constitution": "Sole Proprietor",
+    "status": "analysis_completed",
+    "city": "Delhi",
+    "state": "Delhi",
+    "pincode": "110001",
+    "model": "Assisted Model",
+    "assignedCaseManager": "Vinay Kumar",
+    "phase": "Phase 1 of 4",
+    "phaseLabel": "Personal info",
+    "createdAt": "2026-06-13T10:00:00",
+    "coApplicant": null,
+    "activityLog": [
+      {
+        "id": "x036-1",
+        "title": "Case 036 Created",
+        "by": "Vidhisha Modi (DSA)",
+        "timestamp": "13 June · 10:00 AM",
+        "dateGroup": "Today"
+      }
+    ],
+    "documents": []
+  },
+  {
+    "id": "case-037",
+    "caseNumber": "037",
+    "caseName": "037-Simran Kaur",
+    "borrowerName": "Simran Kaur",
+    "caseCreatedBy": "Megha H Vala",
+    "quoteGeneratedBy": "Orenda Ops",
+    "loanAmount": 5222000,
+    "loanType": "Business Loan",
+    "constitution": "Partnership",
+    "status": "quote_generated",
+    "city": "Bengaluru",
+    "state": "Karnataka",
+    "pincode": "560001",
+    "model": "Assisted Model",
+    "assignedCaseManager": "Vinay Kumar",
+    "phase": "Phase 1 of 4",
+    "phaseLabel": "Personal info",
+    "createdAt": "2026-06-14T10:00:00",
+    "coApplicant": null,
+    "activityLog": [
+      {
+        "id": "x037-1",
+        "title": "Case 037 Created",
+        "by": "Megha H Vala (DSA)",
+        "timestamp": "14 June · 10:00 AM",
+        "dateGroup": "Today"
+      }
+    ],
+    "documents": []
+  },
+  {
+    "id": "case-038",
+    "caseNumber": "038",
+    "caseName": "038-Nikhil Saxena",
+    "borrowerName": "Nikhil Saxena",
+    "caseCreatedBy": "Jitendra.N",
+    "quoteGeneratedBy": "Orenda Ops",
+    "loanAmount": 2123000,
+    "loanType": "Loan Against Property",
+    "constitution": "Self Employed",
+    "status": "disbursed",
+    "city": "Surat",
+    "state": "Gujarat",
+    "pincode": "395001",
+    "model": "Assisted Model",
+    "assignedCaseManager": "Vinay Kumar",
+    "phase": "Phase 1 of 4",
+    "phaseLabel": "Personal info",
+    "createdAt": "2026-06-15T10:00:00",
+    "coApplicant": null,
+    "activityLog": [
+      {
+        "id": "x038-1",
+        "title": "Case 038 Created",
+        "by": "Jitendra.N (DSA)",
+        "timestamp": "15 June · 10:00 AM",
+        "dateGroup": "Today"
+      }
+    ],
+    "documents": []
+  },
+  {
+    "id": "case-039",
+    "caseNumber": "039",
+    "caseName": "039-Lara Fernandes",
+    "borrowerName": "Lara Fernandes",
+    "caseCreatedBy": "Vinay Kumar",
+    "quoteGeneratedBy": "N/A",
+    "loanAmount": 749000,
+    "loanType": "Professional Loan",
+    "constitution": "Private Limited",
+    "status": "pending",
+    "city": "Mumbai",
+    "state": "Maharashtra",
+    "pincode": "400001",
+    "model": "Assisted Model",
+    "assignedCaseManager": "Vinay Kumar",
+    "phase": "Phase 1 of 4",
+    "phaseLabel": "Personal info",
+    "createdAt": "2026-06-16T10:00:00",
+    "coApplicant": null,
+    "activityLog": [
+      {
+        "id": "x039-1",
+        "title": "Case 039 Created",
+        "by": "Vinay Kumar (DSA)",
+        "timestamp": "16 June · 10:00 AM",
+        "dateGroup": "Today"
+      }
+    ],
+    "documents": []
+  },
+  {
+    "id": "case-040",
+    "caseNumber": "040",
+    "caseName": "040-Omkar Kulkarni",
+    "borrowerName": "Omkar Kulkarni",
+    "caseCreatedBy": "Nandit Joshi",
+    "quoteGeneratedBy": "N/A",
+    "loanAmount": 1225000,
+    "loanType": "Home Loan",
+    "constitution": "Salaried",
+    "status": "analysis_completed",
+    "city": "Ahmedabad",
+    "state": "Gujarat",
+    "pincode": "380015",
+    "model": "Assisted Model",
+    "assignedCaseManager": "Vinay Kumar",
+    "phase": "Phase 1 of 4",
+    "phaseLabel": "Personal info",
+    "createdAt": "2026-06-17T10:00:00",
+    "coApplicant": null,
+    "activityLog": [
+      {
+        "id": "x040-1",
+        "title": "Case 040 Created",
+        "by": "Nandit Joshi (DSA)",
+        "timestamp": "17 June · 10:00 AM",
+        "dateGroup": "Today"
+      }
+    ],
+    "documents": []
+  },
+  {
+    "id": "case-041",
+    "caseNumber": "041",
+    "caseName": "041-Zara Sheikh",
+    "borrowerName": "Zara Sheikh",
+    "caseCreatedBy": "Vidhisha Modi",
+    "quoteGeneratedBy": "Orenda Ops",
+    "loanAmount": 1901000,
+    "loanType": "Personal Loan",
+    "constitution": "Sole Proprietor",
+    "status": "quote_generated",
+    "city": "Pune",
+    "state": "Maharashtra",
+    "pincode": "411001",
+    "model": "Assisted Model",
+    "assignedCaseManager": "Vinay Kumar",
+    "phase": "Phase 1 of 4",
+    "phaseLabel": "Personal info",
+    "createdAt": "2026-06-18T10:00:00",
+    "coApplicant": null,
+    "activityLog": [
+      {
+        "id": "x041-1",
+        "title": "Case 041 Created",
+        "by": "Vidhisha Modi (DSA)",
+        "timestamp": "18 June · 10:00 AM",
+        "dateGroup": "Today"
+      }
+    ],
+    "documents": []
+  },
+  {
+    "id": "case-042",
+    "caseNumber": "042",
+    "caseName": "042-Parth Chawla",
+    "borrowerName": "Parth Chawla",
+    "caseCreatedBy": "Megha H Vala",
+    "quoteGeneratedBy": "Orenda Ops",
+    "loanAmount": 2527000,
+    "loanType": "Business Loan",
+    "constitution": "Partnership",
+    "status": "disbursed",
+    "city": "Delhi",
+    "state": "Delhi",
+    "pincode": "110001",
+    "model": "Assisted Model",
+    "assignedCaseManager": "Vinay Kumar",
+    "phase": "Phase 1 of 4",
+    "phaseLabel": "Personal info",
+    "createdAt": "2026-06-19T10:00:00",
+    "coApplicant": null,
+    "activityLog": [
+      {
+        "id": "x042-1",
+        "title": "Case 042 Created",
+        "by": "Megha H Vala (DSA)",
+        "timestamp": "19 June · 10:00 AM",
+        "dateGroup": "Today"
+      }
+    ],
+    "documents": []
+  },
+  {
+    "id": "case-043",
+    "caseNumber": "043",
+    "caseName": "043-Ira Banerjee",
+    "borrowerName": "Ira Banerjee",
+    "caseCreatedBy": "Jitendra.N",
+    "quoteGeneratedBy": "N/A",
+    "loanAmount": 3128000,
+    "loanType": "Loan Against Property",
+    "constitution": "Self Employed",
+    "status": "pending",
+    "city": "Bengaluru",
+    "state": "Karnataka",
+    "pincode": "560001",
+    "model": "Assisted Model",
+    "assignedCaseManager": "Vinay Kumar",
+    "phase": "Phase 1 of 4",
+    "phaseLabel": "Personal info",
+    "createdAt": "2026-06-20T10:00:00",
+    "coApplicant": null,
+    "activityLog": [
+      {
+        "id": "x043-1",
+        "title": "Case 043 Created",
+        "by": "Jitendra.N (DSA)",
+        "timestamp": "20 June · 10:00 AM",
+        "dateGroup": "Today"
+      }
+    ],
+    "documents": []
+  },
+  {
+    "id": "case-044",
+    "caseNumber": "044",
+    "caseName": "044-Kabir Sethi",
+    "borrowerName": "Kabir Sethi",
+    "caseCreatedBy": "Vinay Kumar",
+    "quoteGeneratedBy": "N/A",
+    "loanAmount": 4529000,
+    "loanType": "Professional Loan",
+    "constitution": "Private Limited",
+    "status": "analysis_completed",
+    "city": "Surat",
+    "state": "Gujarat",
+    "pincode": "395001",
+    "model": "Assisted Model",
+    "assignedCaseManager": "Vinay Kumar",
+    "phase": "Phase 1 of 4",
+    "phaseLabel": "Personal info",
+    "createdAt": "2026-06-21T10:00:00",
+    "coApplicant": null,
+    "activityLog": [
+      {
+        "id": "x044-1",
+        "title": "Case 044 Created",
+        "by": "Vinay Kumar (DSA)",
+        "timestamp": "21 June · 10:00 AM",
+        "dateGroup": "Today"
+      }
+    ],
+    "documents": []
+  },
+  {
+    "id": "case-045",
+    "caseNumber": "045",
+    "caseName": "045-Mehul Trivedi",
+    "borrowerName": "Mehul Trivedi",
+    "caseCreatedBy": "Nandit Joshi",
+    "quoteGeneratedBy": "Orenda Ops",
+    "loanAmount": 920000,
+    "loanType": "Home Loan",
+    "constitution": "Salaried",
+    "status": "quote_generated",
+    "city": "Mumbai",
+    "state": "Maharashtra",
+    "pincode": "400001",
+    "model": "Assisted Model",
+    "assignedCaseManager": "Vinay Kumar",
+    "phase": "Phase 1 of 4",
+    "phaseLabel": "Personal info",
+    "createdAt": "2026-06-22T10:00:00",
+    "coApplicant": null,
+    "activityLog": [
+      {
+        "id": "x045-1",
+        "title": "Case 045 Created",
+        "by": "Nandit Joshi (DSA)",
+        "timestamp": "22 June · 10:00 AM",
+        "dateGroup": "Today"
+      }
+    ],
+    "documents": []
+  },
+  {
+    "id": "case-046",
+    "caseNumber": "046",
+    "caseName": "046-Snehal More",
+    "borrowerName": "Snehal More",
+    "caseCreatedBy": "Vidhisha Modi",
+    "quoteGeneratedBy": "Orenda Ops",
+    "loanAmount": 1681000,
+    "loanType": "Personal Loan",
+    "constitution": "Sole Proprietor",
+    "status": "disbursed",
+    "city": "Ahmedabad",
+    "state": "Gujarat",
+    "pincode": "380015",
+    "model": "Assisted Model",
+    "assignedCaseManager": "Vinay Kumar",
+    "phase": "Phase 1 of 4",
+    "phaseLabel": "Personal info",
+    "createdAt": "2026-06-23T10:00:00",
+    "coApplicant": null,
+    "activityLog": [
+      {
+        "id": "x046-1",
+        "title": "Case 046 Created",
+        "by": "Vidhisha Modi (DSA)",
+        "timestamp": "23 June · 10:00 AM",
+        "dateGroup": "Today"
+      }
+    ],
+    "documents": []
+  },
+  {
+    "id": "case-047",
+    "caseNumber": "047",
+    "caseName": "047-Advait Kulkarni",
+    "borrowerName": "Advait Kulkarni",
+    "caseCreatedBy": "Megha H Vala",
+    "quoteGeneratedBy": "N/A",
+    "loanAmount": 1012000,
+    "loanType": "Business Loan",
+    "constitution": "Partnership",
+    "status": "pending",
+    "city": "Pune",
+    "state": "Maharashtra",
+    "pincode": "411001",
+    "model": "Assisted Model",
+    "assignedCaseManager": "Vinay Kumar",
+    "phase": "Phase 1 of 4",
+    "phaseLabel": "Personal info",
+    "createdAt": "2026-06-24T10:00:00",
+    "coApplicant": null,
+    "activityLog": [
+      {
+        "id": "x047-1",
+        "title": "Case 047 Created",
+        "by": "Megha H Vala (DSA)",
+        "timestamp": "24 June · 10:00 AM",
+        "dateGroup": "Today"
+      }
+    ],
+    "documents": []
+  },
+  {
+    "id": "case-048",
+    "caseNumber": "048",
+    "caseName": "048-Rhea Menon",
+    "borrowerName": "Rhea Menon",
+    "caseCreatedBy": "Jitendra.N",
+    "quoteGeneratedBy": "N/A",
+    "loanAmount": 2783000,
+    "loanType": "Loan Against Property",
+    "constitution": "Self Employed",
+    "status": "analysis_completed",
+    "city": "Delhi",
+    "state": "Delhi",
+    "pincode": "110001",
+    "model": "Assisted Model",
+    "assignedCaseManager": "Vinay Kumar",
+    "phase": "Phase 1 of 4",
+    "phaseLabel": "Personal info",
+    "createdAt": "2026-06-25T10:00:00",
+    "coApplicant": null,
+    "activityLog": [
+      {
+        "id": "x048-1",
+        "title": "Case 048 Created",
+        "by": "Jitendra.N (DSA)",
+        "timestamp": "25 June · 10:00 AM",
+        "dateGroup": "Today"
+      }
+    ],
+    "documents": []
+  },
+  {
+    "id": "case-049",
+    "caseNumber": "049",
+    "caseName": "049-Tanvi Shah",
+    "borrowerName": "Tanvi Shah",
+    "caseCreatedBy": "Vinay Kumar",
+    "quoteGeneratedBy": "Orenda Ops",
+    "loanAmount": 5234000,
+    "loanType": "Professional Loan",
+    "constitution": "Private Limited",
+    "status": "quote_generated",
+    "city": "Bengaluru",
+    "state": "Karnataka",
+    "pincode": "560001",
+    "model": "Assisted Model",
+    "assignedCaseManager": "Vinay Kumar",
+    "phase": "Phase 1 of 4",
+    "phaseLabel": "Personal info",
+    "createdAt": "2026-06-26T10:00:00",
+    "coApplicant": null,
+    "activityLog": [
+      {
+        "id": "x049-1",
+        "title": "Case 049 Created",
+        "by": "Vinay Kumar (DSA)",
+        "timestamp": "26 June · 10:00 AM",
+        "dateGroup": "Today"
+      }
+    ],
+    "documents": []
+  },
+  {
+    "id": "case-050",
+    "caseNumber": "050",
+    "caseName": "050-Jayesh Parmar",
+    "borrowerName": "Jayesh Parmar",
+    "caseCreatedBy": "Nandit Joshi",
+    "quoteGeneratedBy": "Orenda Ops",
+    "loanAmount": 2135000,
+    "loanType": "Home Loan",
+    "constitution": "Salaried",
+    "status": "disbursed",
+    "city": "Surat",
+    "state": "Gujarat",
+    "pincode": "395001",
+    "model": "Assisted Model",
+    "assignedCaseManager": "Vinay Kumar",
+    "phase": "Phase 1 of 4",
+    "phaseLabel": "Personal info",
+    "createdAt": "2026-06-27T10:00:00",
+    "coApplicant": null,
+    "activityLog": [
+      {
+        "id": "x050-1",
+        "title": "Case 050 Created",
+        "by": "Nandit Joshi (DSA)",
+        "timestamp": "27 June · 10:00 AM",
+        "dateGroup": "Today"
+      }
+    ],
+    "documents": []
+  },
+  {
+    "id": "case-051",
+    "caseNumber": "051",
+    "caseName": "051-Kritika Das",
+    "borrowerName": "Kritika Das",
+    "caseCreatedBy": "Vidhisha Modi",
+    "quoteGeneratedBy": "N/A",
+    "loanAmount": 761000,
+    "loanType": "Personal Loan",
+    "constitution": "Sole Proprietor",
+    "status": "pending",
+    "city": "Mumbai",
+    "state": "Maharashtra",
+    "pincode": "400001",
+    "model": "Assisted Model",
+    "assignedCaseManager": "Vinay Kumar",
+    "phase": "Phase 1 of 4",
+    "phaseLabel": "Personal info",
+    "createdAt": "2026-06-10T10:00:00",
+    "coApplicant": null,
+    "activityLog": [
+      {
+        "id": "x051-1",
+        "title": "Case 051 Created",
+        "by": "Vidhisha Modi (DSA)",
+        "timestamp": "10 June · 10:00 AM",
+        "dateGroup": "Today"
+      }
+    ],
+    "documents": []
+  },
+  {
+    "id": "case-052",
+    "caseNumber": "052",
+    "caseName": "052-Aman Gill",
+    "borrowerName": "Aman Gill",
+    "caseCreatedBy": "Megha H Vala",
+    "quoteGeneratedBy": "N/A",
+    "loanAmount": 1237000,
+    "loanType": "Business Loan",
+    "constitution": "Partnership",
+    "status": "analysis_completed",
+    "city": "Ahmedabad",
+    "state": "Gujarat",
+    "pincode": "380015",
+    "model": "Assisted Model",
+    "assignedCaseManager": "Vinay Kumar",
+    "phase": "Phase 1 of 4",
+    "phaseLabel": "Personal info",
+    "createdAt": "2026-06-11T10:00:00",
+    "coApplicant": null,
+    "activityLog": [
+      {
+        "id": "x052-1",
+        "title": "Case 052 Created",
+        "by": "Megha H Vala (DSA)",
+        "timestamp": "11 June · 10:00 AM",
+        "dateGroup": "Today"
+      }
+    ],
+    "documents": []
+  },
+  {
+    "id": "case-053",
+    "caseNumber": "053",
+    "caseName": "053-Nisha Vora",
+    "borrowerName": "Nisha Vora",
+    "caseCreatedBy": "Jitendra.N",
+    "quoteGeneratedBy": "Orenda Ops",
+    "loanAmount": 1913000,
+    "loanType": "Loan Against Property",
+    "constitution": "Self Employed",
+    "status": "quote_generated",
+    "city": "Pune",
+    "state": "Maharashtra",
+    "pincode": "411001",
+    "model": "Assisted Model",
+    "assignedCaseManager": "Vinay Kumar",
+    "phase": "Phase 1 of 4",
+    "phaseLabel": "Personal info",
+    "createdAt": "2026-06-12T10:00:00",
+    "coApplicant": null,
+    "activityLog": [
+      {
+        "id": "x053-1",
+        "title": "Case 053 Created",
+        "by": "Jitendra.N (DSA)",
+        "timestamp": "12 June · 10:00 AM",
+        "dateGroup": "Today"
+      }
+    ],
+    "documents": []
+  },
+  {
+    "id": "case-054",
+    "caseNumber": "054",
+    "caseName": "054-Sahil Bansal",
+    "borrowerName": "Sahil Bansal",
+    "caseCreatedBy": "Vinay Kumar",
+    "quoteGeneratedBy": "Orenda Ops",
+    "loanAmount": 2539000,
+    "loanType": "Professional Loan",
+    "constitution": "Private Limited",
+    "status": "disbursed",
+    "city": "Delhi",
+    "state": "Delhi",
+    "pincode": "110001",
+    "model": "Assisted Model",
+    "assignedCaseManager": "Vinay Kumar",
+    "phase": "Phase 1 of 4",
+    "phaseLabel": "Personal info",
+    "createdAt": "2026-06-13T10:00:00",
+    "coApplicant": null,
+    "activityLog": [
+      {
+        "id": "x054-1",
+        "title": "Case 054 Created",
+        "by": "Vinay Kumar (DSA)",
+        "timestamp": "13 June · 10:00 AM",
+        "dateGroup": "Today"
+      }
+    ],
+    "documents": []
+  },
+  {
+    "id": "case-958",
+    "caseNumber": "958",
+    "caseName": "958-Dhruv Desai",
+    "borrowerName": "Dhruv Desai",
+    "caseCreatedBy": "Vinay Kumar",
+    "quoteGeneratedBy": "N/A",
+    "loanAmount": 4500000,
+    "loanType": "Personal Loan",
+    "constitution": "Sole Proprietor",
+    "status": "pending",
+    "city": "Ahmedabad",
+    "state": "Gujarat",
+    "pincode": "380015",
+    "model": "Assisted Model",
+    "assignedCaseManager": "Vinay Kumar",
+    "phase": "Phase 1 of 4",
+    "phaseLabel": "Personal info",
+    "createdAt": "2026-06-28T21:00:00",
+    "coApplicant": null,
+    "activityLog": [
+      {
+        "id": "k1",
+        "title": "Co-Applicant Added",
+        "by": "Vinay Kumar (DSA)",
+        "timestamp": "28 June • 9:30 PM",
+        "dateGroup": "Today"
+      },
+      {
+        "id": "k2",
+        "title": "Personal Info Added",
+        "by": "Vinay Kumar (DSA)",
+        "timestamp": "28 June • 9:15 PM",
+        "dateGroup": "Today"
+      },
+      {
+        "id": "k3",
+        "title": "Case 958 Created",
+        "by": "Vinay Kumar (DSA)",
+        "timestamp": "28 June • 9:00 PM",
+        "dateGroup": "Today"
+      }
+    ],
+    "documents": [
+      {
+        "id": "doc-958-1",
+        "name": "Aadhaar_Card.pdf",
+        "type": "PDF",
+        "size": "256 KB",
+        "uploadedAt": "28 June 2026",
+        "uploadedBy": "Vinay Kumar"
+      },
+      {
+        "id": "doc-958-2",
+        "name": "PAN_Card.pdf",
+        "type": "PDF",
+        "size": "142 KB",
+        "uploadedAt": "28 June 2026",
+        "uploadedBy": "Vinay Kumar"
+      },
+      {
+        "id": "doc-958-3",
+        "name": "Business_Proof.pdf",
+        "type": "PDF",
+        "size": "780 KB",
+        "uploadedAt": "28 June 2026",
+        "uploadedBy": "Vinay Kumar"
+      }
+    ]
+  }
+]

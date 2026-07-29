@@ -1,0 +1,7 @@
+[
+  { "id": "home_loan", "label": "Home Loan" },
+  { "id": "lap", "label": "Loan Against Property" },
+  { "id": "business_loan", "label": "Business Loan" },
+  { "id": "personal_loan", "label": "Personal Loan" },
+  { "id": "professional_loan", "label": "Professional Loan" }
+]

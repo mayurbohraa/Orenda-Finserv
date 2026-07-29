@@ -1,0 +1,42 @@
+[
+  {
+    "id": "n1",
+    "title": "Case CASE-958 updated",
+    "message": "Applicant details were saved for Dhruv Desai.",
+    "time": "2 min ago",
+    "read": false,
+    "type": "case"
+  },
+  {
+    "id": "n2",
+    "title": "Document uploaded",
+    "message": "Aadhaar_Card.pdf was added to CASE-001.",
+    "time": "25 min ago",
+    "read": false,
+    "type": "document"
+  },
+  {
+    "id": "n3",
+    "title": "Co-applicant added",
+    "message": "A co-applicant was linked to CASE-003.",
+    "time": "1 hr ago",
+    "read": false,
+    "type": "case"
+  },
+  {
+    "id": "n4",
+    "title": "Quote ready for review",
+    "message": "Quote is ready for CASE-005 — Rishabh Patel.",
+    "time": "Yesterday",
+    "read": true,
+    "type": "quote"
+  },
+  {
+    "id": "n5",
+    "title": "Welcome to Orenda Finserv",
+    "message": "Your DSA workspace is ready. Start by creating a case.",
+    "time": "3 days ago",
+    "read": true,
+    "type": "system"
+  }
+]

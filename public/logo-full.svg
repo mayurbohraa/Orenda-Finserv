@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 210 56" fill="none" role="img" aria-label="Orenda — Finances Simplified">
+  <circle cx="26" cy="30" r="18" stroke="#1A8FC4" stroke-width="5.5"/>
+  <path d="M26 16 L38 40 H14 Z" fill="#2F9E44"/>
+  <text x="54" y="18" fill="#2F9E44" font-family="DM Sans, Arial, Helvetica, sans-serif" font-size="10" font-weight="500">Finances Simplified</text>
+  <text x="54" y="42" fill="#1A8FC4" font-family="DM Sans, Arial, Helvetica, sans-serif" font-size="26" font-weight="700">Orenda</text>
+</svg>

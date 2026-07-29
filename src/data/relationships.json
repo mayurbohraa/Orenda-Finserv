@@ -1,0 +1,11 @@
+[
+  { "id": "wife", "label": "Wife" },
+  { "id": "husband", "label": "Husband" },
+  { "id": "father", "label": "Father" },
+  { "id": "mother", "label": "Mother" },
+  { "id": "son", "label": "Son" },
+  { "id": "daughter", "label": "Daughter" },
+  { "id": "brother", "label": "Brother" },
+  { "id": "sister", "label": "Sister" },
+  { "id": "other", "label": "Other" }
+]

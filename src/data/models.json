@@ -1,0 +1,5 @@
+[
+  { "id": "booking", "label": "Booking Model" },
+  { "id": "assisted", "label": "Assisted Model", "default": true },
+  { "id": "lead_based", "label": "Lead-based Model" }
+]

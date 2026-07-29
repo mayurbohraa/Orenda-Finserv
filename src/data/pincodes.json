@@ -1,0 +1,14 @@
+{
+  "380015": { "city": "Ahmedabad", "state": "Gujarat" },
+  "380001": { "city": "Ahmedabad", "state": "Gujarat" },
+  "390001": { "city": "Vadodara", "state": "Gujarat" },
+  "395001": { "city": "Surat", "state": "Gujarat" },
+  "400001": { "city": "Mumbai", "state": "Maharashtra" },
+  "411001": { "city": "Pune", "state": "Maharashtra" },
+  "560001": { "city": "Bengaluru", "state": "Karnataka" },
+  "110001": { "city": "Delhi", "state": "Delhi" },
+  "302001": { "city": "Jaipur", "state": "Rajasthan" },
+  "600001": { "city": "Chennai", "state": "Tamil Nadu" },
+  "500001": { "city": "Hyderabad", "state": "Telangana" },
+  "700001": { "city": "Kolkata", "state": "West Bengal" }
+}

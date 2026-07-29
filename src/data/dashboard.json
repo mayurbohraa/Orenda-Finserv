@@ -1,0 +1,33 @@
+{
+  "totalLoanAmount": {
+    "label": "Total Loan Amount",
+    "value": "₹6.18 Cr",
+    "trend": 60,
+    "trendDirection": "up",
+    "subtitle": "Current Month",
+    "chart": {
+      "color": "green",
+      "points": [2.0, 2.35, 2.15, 2.55, 2.4, 2.85, 2.7, 3.0],
+      "labels": [
+        { "value": "₹2.5 Cr", "caption": "Last Quarter" },
+        { "value": "₹3.0 Cr", "caption": "Last Month" }
+
+      ]
+    }
+  },
+  "totalRecords": {
+    "label": "Total Records",
+    "value": "5",
+    "trend": 20,
+    "trendDirection": "down",
+    "subtitle": "Current Month",
+    "chart": {
+      "color": "red",
+      "points": [5, 4.8, 4.5, 4.2, 3.8, 3.5, 3.2, 3],
+      "labels": [
+        { "value": "5", "caption": "Last Quarter" },
+        { "value": "3", "caption": "Last Month" }
+      ]
+    }
+  }
+}
