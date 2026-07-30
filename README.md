@@ -4,15 +4,19 @@ Orenda Finserv CRM is a frontend-only CRM mock portal developed as part of the O
 
 ## Stack
 
-| Layer | Choice |
-|--------|--------|
-| UI | React 19 + Vite |
-| Language | JavaScript (ES6+) / JSX |
-| Routing | React Router DOM |
-| Styling | Tailwind CSS v4 |
-| State | Context API |
-| Data | JSON fixtures in `src/data/` |
-| Icons | lucide-react |
+
+| Layer    | Choice                       |
+| -------- | ---------------------------- |
+| UI       | React 19 + Vite              |
+| Language | JavaScript (ES6+) / JSX      |
+| Routing  | React Router DOM             |
+| Styling  | Tailwind CSS v4              |
+| State    | Context API                  |
+| Data     | JSON fixtures in `src/data/` |
+| Icons    | lucide-react                 |
+
+
+
 
 ## Setup
 
@@ -25,20 +29,28 @@ Open the URL printed by Vite (usually `http://localhost:5173`).
 
 ### Scripts
 
-| Command | Description |
-|---------|-------------|
-| `npm run dev` | Start local development server |
-| `npm run build` | Production build to `dist/` |
-| `npm run preview` | Preview the production build |
-| `npm run lint` | Run oxlint |
+
+| Command           | Description                    |
+| ----------------- | ------------------------------ |
+| `npm run dev`     | Start local development server |
+| `npm run build`   | Production build to `dist/`    |
+| `npm run preview` | Preview the production build   |
+| `npm run lint`    | Run oxlint                     |
+
+
+
 
 ## Routes
 
-| Path | Screen |
-|------|--------|
-| `/` | Dashboard (Home) |
-| `/cases` | Cases list |
+
+| Path         | Screen                                                         |
+| ------------ | -------------------------------------------------------------- |
+| `/`          | Dashboard (Home)                                               |
+| `/cases`     | Cases list                                                     |
 | `/cases/:id` | Case detail (applicant, co-applicant, documents, activity log) |
+
+
+
 
 ## Features
 
@@ -50,6 +62,8 @@ Open the URL printed by Vite (usually `http://localhost:5173`).
 - **Scrollbars** — custom navy thumb on main areas, tables, dropdowns, and panels; visible only while scrolling
 - **Toast** — success feedback for case create, logout, and document actions
 
+
+
 ## Notes
 
 - City and state autofill from `src/data/pincodes.json` first; any other valid 6-digit Indian pincode is resolved via the India Post API.
@@ -59,6 +73,8 @@ Open the URL printed by Vite (usually `http://localhost:5173`).
 - Uploaded documents can be previewed in a modal (images/PDFs); sample seeded docs show a placeholder preview.
 - Select menus render above cards and modals so options are not clipped.
 - Logout shows a success toast (no authentication backend).
+
+
 
 ## Project structure
 
@@ -78,6 +94,18 @@ src/
   index.css
 ```
 
-## Detailed documentation
 
-For a full walkthrough of architecture, data flow, screens, and feature behavior, see [`PROJECT_DOCUMENTATION.md`](./PROJECT_DOCUMENTATION.md).
+
+## Trade-offs / with more time
+
+This assignment prioritised Figma-faithful UI and the full case flow over a production backend. State lives in React Context over JSON fixtures, so creates, edits, and document uploads reset on refresh; logout, CSV export, and Support are intentionally stubbed.
+
+**With more time I would:**
+
+- Add a thin data layer (mock API or `localStorage` first) so cases and documents persist, then wire real upload/preview URLs instead of blob URLs.
+- Introduce auth (login, route guards, real logout) and derive dashboard KPIs from live case data rather than static `dashboard.json`.
+- Model status/phase transitions and activity timestamps properly, with field-level validation and delete confirmations.
+- Add TypeScript and a small test suite (helpers, context mutations, and a create → edit → upload flow).
+
+
+
