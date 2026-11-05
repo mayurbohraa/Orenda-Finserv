@@ -10,6 +10,11 @@ export default function Table({
 }) {
   return (
     <ScrollInset
+      viewportProps={{
+        tabIndex: 0,
+        role: 'region',
+        'aria-label': 'Cases table. Scroll horizontally to view all columns.',
+      }}
       className={cn(
         'min-h-0 rounded-xl border border-[#D1DEE8] bg-white',
         className,
@@ -55,7 +60,10 @@ export default function Table({
             </tr>
           ) : (
             rows.map((row, idx) => (
-              <tr key={row.id || idx} className="bg-white hover:bg-[#F0F7FF]/40">
+              <tr
+                key={row.id || idx}
+                className="bg-white hover:bg-[#F0F7FF]/40"
+              >
                 {columns.map((col) => (
                   <td
                     key={col.key}

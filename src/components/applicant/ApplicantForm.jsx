@@ -1,18 +1,17 @@
 /** Applicant edit form */
-import { useEffect, useMemo, useState } from 'react'
+
 import { X } from 'lucide-react'
 import Button from '../ui/Button'
 import Input from '../ui/Input'
 import Radio from '../ui/Radio'
 import Select from '../ui/Select'
-import { useApp } from '../../contexts/AppContext'
+import { useApp } from '../../contexts/useApp'
 import loanTypes from '../../data/loanTypes.json'
 import constitutions from '../../data/constitutions.json'
 import models from '../../data/models.json'
-import {
-  formatLoanAmountInput,
-  isValidPincode,
-} from '../../utils/helpers'
+import { formatLoanAmountInput } from '../../utils/helpers'
+import useApplicantForm from '../../hooks/useApplicantForm'
+import LocationFeedback from './LocationFeedback'
 
 /** Prefill form from case data */
 function buildInitial(caseData) {
@@ -31,57 +30,10 @@ function buildInitial(caseData) {
 }
 
 export default function ApplicantForm({ caseData, onCancel, onSaved }) {
-  const { updateApplicant, lookupPincode, setSaveStatus } = useApp()
-  const [form, setForm] = useState(() => buildInitial(caseData))
-
-  useEffect(() => {
-    setSaveStatus('saving')
-    return () => setSaveStatus('saved')
-  }, [setSaveStatus])
-
-  useEffect(() => {
-    let cancelled = false
-    if (!isValidPincode(form.pincode)) {
-      setForm((prev) =>
-        prev.city || prev.state ? { ...prev, city: '', state: '' } : prev,
-      )
-      return
-    }
-    ;(async () => {
-      const match = await lookupPincode(form.pincode)
-      if (cancelled) return
-      if (match) {
-        setForm((prev) => ({ ...prev, city: match.city, state: match.state }))
-      } else {
-        setForm((prev) =>
-          prev.city || prev.state ? { ...prev, city: '', state: '' } : prev,
-        )
-      }
-    })()
-    return () => {
-      cancelled = true
-    }
-  }, [form.pincode, lookupPincode])
-
-  const isValid = useMemo(() => {
-    return (
-      form.borrowerName.trim() &&
-      form.loanType &&
-      form.constitution &&
-      form.loanAmount &&
-      isValidPincode(form.pincode) &&
-      form.city &&
-      form.state &&
-      form.model
-    )
-  }, [form])
-
-  const update = (key, value) => setForm((prev) => ({ ...prev, [key]: value }))
-
-  const handleCancel = () => {
-    setSaveStatus('saved')
-    onCancel?.()
-  }
+  const { updateApplicant } = useApp()
+  const { form, update, isValid, amountError, pincodeError, loading, retry } =
+    useApplicantForm(() => buildInitial(caseData))
+  const handleCancel = () => onCancel?.()
 
   const handleSave = () => {
     if (!isValid) return
@@ -111,11 +63,7 @@ export default function ApplicantForm({ caseData, onCancel, onSaved }) {
             value={form.borrowerName}
             onChange={(e) => update('borrowerName', e.target.value)}
           />
-          <Input
-            label="Case Number"
-            value={caseData.caseNumber}
-            readOnly
-          />
+          <Input label="Case Number" value={caseData.caseNumber} readOnly />
           <Select
             label="Loan Type"
             placeholder="Select Loan Type"
@@ -135,6 +83,9 @@ export default function ApplicantForm({ caseData, onCancel, onSaved }) {
             placeholder="0"
             prefix="₹"
             value={form.loanAmount}
+            error={amountError}
+            inputMode="numeric"
+            maxLength={30}
             onChange={(e) =>
               update('loanAmount', formatLoanAmountInput(e.target.value))
             }
@@ -152,13 +103,32 @@ export default function ApplicantForm({ caseData, onCancel, onSaved }) {
             placeholder="Enter Pincode"
             value={form.pincode}
             maxLength={6}
+            inputMode="numeric"
+            autoComplete="postal-code"
+            aria-busy={loading}
+            error={
+              form.pincode && form.pincode.length !== 6
+                ? 'Enter a 6-digit pincode.'
+                : undefined
+            }
             onChange={(e) =>
               update('pincode', e.target.value.replace(/\D/g, '').slice(0, 6))
             }
           />
           <Input label="City" value={form.city} readOnly placeholder="City" />
-          <Input label="State" value={form.state} readOnly placeholder="State" />
+          <Input
+            label="State"
+            value={form.state}
+            readOnly
+            placeholder="State"
+          />
         </div>
+
+        <LocationFeedback
+          loading={loading}
+          error={pincodeError}
+          onRetry={retry}
+        />
 
         <Radio
           label="Select Model"

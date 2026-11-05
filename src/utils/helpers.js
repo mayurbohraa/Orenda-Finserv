@@ -26,7 +26,15 @@ export function formatIndianCurrency(amount) {
 export function formatLoanAmountInput(value) {
   const digits = String(value).replace(/[^\d]/g, '')
   if (!digits) return ''
-  return Number(digits).toLocaleString('en-IN')
+  const normalized = digits.replace(/^0+(?=\d)/, '')
+  const leading = normalized.slice(0, -3).replace(/\B(?=(\d{2})+(?!\d))/g, ',')
+  return leading ? `${leading},${normalized.slice(-3)}` : normalized
+}
+
+export function isValidLoanAmount(value) {
+  if (!/^\d[\d,]*$/.test(String(value))) return false
+  const amount = parseLoanAmount(value)
+  return Number.isSafeInteger(amount) && amount > 0
 }
 
 /** Parse formatted loan amount to number */
@@ -37,7 +45,7 @@ export function parseLoanAmount(value) {
 
 /** True if pincode is 6 digits */
 export function isValidPincode(pincode) {
-  return /^\d{6}$/.test(String(pincode || '').trim())
+  return /^[1-9]\d{5}$/.test(String(pincode || '').trim())
 }
 
 /** Pad case number to 3 digits */

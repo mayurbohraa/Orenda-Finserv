@@ -9,7 +9,7 @@ import {
   Star,
   UserRound,
 } from 'lucide-react'
-import { useApp } from '../../contexts/AppContext'
+import { useApp } from '../../contexts/useApp'
 import { cn } from '../../utils/helpers'
 import ScrollInset from '../ui/ScrollInset'
 
@@ -27,6 +27,28 @@ export default function Header({ breadcrumb }) {
   const menuRef = useRef(null)
   const notifRef = useRef(null)
 
+  const handleMenuKeys = (event) => {
+    if (!['ArrowDown', 'ArrowUp', 'Home', 'End'].includes(event.key)) return
+    event.preventDefault()
+    const items = [
+      ...event.currentTarget.querySelectorAll('button:not(:disabled)'),
+    ]
+    const current = items.indexOf(document.activeElement)
+    const next =
+      event.key === 'Home'
+        ? 0
+        : event.key === 'End'
+          ? items.length - 1
+          : (current + (event.key === 'ArrowDown' ? 1 : -1) + items.length) %
+            items.length
+    items[next]?.focus()
+  }
+
+  useEffect(() => {
+    if (menuOpen) menuRef.current?.querySelector('[role="menuitem"]')?.focus()
+    if (notifOpen) notifRef.current?.querySelector('[role="menuitem"]')?.focus()
+  }, [menuOpen, notifOpen])
+
   useEffect(() => {
     if (!menuOpen && !notifOpen) return undefined
 
@@ -40,6 +62,9 @@ export default function Header({ breadcrumb }) {
     }
     const onKey = (e) => {
       if (e.key === 'Escape') {
+        if (menuOpen) menuRef.current?.querySelector('[aria-haspopup]')?.focus()
+        if (notifOpen)
+          notifRef.current?.querySelector('[aria-haspopup]')?.focus()
         setMenuOpen(false)
         setNotifOpen(false)
       }
@@ -56,14 +81,15 @@ export default function Header({ breadcrumb }) {
   const handleLogout = () => {
     setMenuOpen(false)
     showToast({
-      type: 'success',
-      message: 'You have been logged out successfully',
+      type: 'info',
+      message:
+        'This demo has no sign-in session. Your data stays available until you refresh.',
     })
   }
 
   return (
-    <header className="flex h-16 shrink-0 items-center justify-between gap-4 border-b border-[#D1DEE8] bg-white px-4 md:px-6">
-      <div className="min-w-0 text-sm text-muted">
+    <header className="flex h-16 shrink-0 items-center justify-between gap-2 border-b border-[#D1DEE8] bg-white px-3 md:px-6">
+      <div className="min-w-0 truncate text-sm text-muted">
         {typeof breadcrumb === 'string' ? (
           <span className="font-medium text-[#154F7A]">{breadcrumb}</span>
         ) : (
@@ -71,8 +97,11 @@ export default function Header({ breadcrumb }) {
         )}
       </div>
 
-      <div className="flex items-center">
-        <div className="flex items-center gap-1.5 pr-4 md:pr-5">
+      <div className="flex shrink-0 items-center">
+        <div
+          className="flex items-center gap-1.5 pr-2 md:pr-5"
+          aria-label={`${user.rewardPoints} reward points`}
+        >
           <span className="flex h-[18px] w-[18px] items-center justify-center rounded-full border border-[#154F7A] text-[#154F7A]">
             <Star className="h-[10px] w-[10px] fill-current" strokeWidth={0} />
           </span>
@@ -90,7 +119,7 @@ export default function Header({ breadcrumb }) {
               setNotifOpen((open) => !open)
               setMenuOpen(false)
             }}
-            className="relative px-4 py-2 text-[#154F7A] hover:opacity-80 md:px-5"
+            className="relative px-2 py-2 text-[#154F7A] hover:opacity-80 md:px-5"
             aria-label={
               unreadCount > 0
                 ? `Notifications, ${unreadCount} unread`
@@ -102,7 +131,7 @@ export default function Header({ breadcrumb }) {
             <Bell className="h-5 w-5" strokeWidth={1.75} />
             {unreadCount > 0 ? (
               <span
-                className="absolute right-4 top-1 h-2 w-2 rounded-full bg-[#ef4444] md:right-5"
+                className="absolute right-2 top-1 h-2 w-2 rounded-full bg-[#ef4444] md:right-5"
                 aria-hidden
               />
             ) : null}
@@ -111,7 +140,9 @@ export default function Header({ breadcrumb }) {
           {notifOpen ? (
             <div
               role="menu"
-              className="absolute right-0 top-[calc(100%+8px)] z-50 w-[min(100vw-2rem,360px)] overflow-hidden rounded-xl border border-[#D1DEE8] bg-white shadow-lg animate-slide-up"
+              aria-label="Notifications"
+              onKeyDown={handleMenuKeys}
+              className="fixed left-3 right-3 top-[72px] z-50 overflow-hidden rounded-xl border border-[#D1DEE8] bg-white shadow-lg animate-slide-up sm:absolute sm:left-auto sm:right-0 sm:top-[calc(100%+8px)] sm:w-[360px]"
             >
               <div className="flex items-center justify-between border-b border-[#D1DEE8] px-4 py-3">
                 <div>
@@ -127,6 +158,7 @@ export default function Header({ breadcrumb }) {
                 {unreadCount > 0 ? (
                   <button
                     type="button"
+                    role="menuitem"
                     onClick={markAllNotificationsRead}
                     className="text-xs font-semibold text-[#2b7de9] hover:underline"
                   >
@@ -143,7 +175,10 @@ export default function Header({ breadcrumb }) {
                     </li>
                   ) : (
                     notifications.map((item) => (
-                      <li key={item.id} className="border-b border-[#EEF2F6] last:border-b-0">
+                      <li
+                        key={item.id}
+                        className="border-b border-[#EEF2F6] last:border-b-0"
+                      >
                         <button
                           type="button"
                           role="menuitem"
@@ -162,7 +197,10 @@ export default function Header({ breadcrumb }) {
                             )}
                           >
                             {item.type === 'document' ? (
-                              <FileText className="h-4 w-4" strokeWidth={1.75} />
+                              <FileText
+                                className="h-4 w-4"
+                                strokeWidth={1.75}
+                              />
                             ) : (
                               <Bell className="h-4 w-4" strokeWidth={1.75} />
                             )}
@@ -209,7 +247,8 @@ export default function Header({ breadcrumb }) {
             }}
             aria-haspopup="menu"
             aria-expanded={menuOpen}
-            className="flex items-center gap-2.5 py-1 pl-4 pr-0 hover:opacity-90 md:pl-5"
+            aria-label={`${user.name}, profile`}
+            className="flex items-center gap-2.5 py-1 pl-2 pr-0 hover:opacity-90 md:pl-5"
           >
             <span
               className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-xs font-semibold text-white"
@@ -234,7 +273,9 @@ export default function Header({ breadcrumb }) {
           {menuOpen ? (
             <div
               role="menu"
-              className="absolute right-0 top-[calc(100%+8px)] z-50 w-64 overflow-hidden rounded-xl border border-[#D1DEE8] bg-white py-2 shadow-lg animate-slide-up"
+              aria-label="Profile"
+              onKeyDown={handleMenuKeys}
+              className="fixed left-3 right-3 top-[72px] z-50 overflow-hidden rounded-xl border border-[#D1DEE8] bg-white py-2 shadow-lg animate-slide-up sm:absolute sm:left-auto sm:right-0 sm:top-[calc(100%+8px)] sm:w-64"
             >
               <div className="border-b border-[#D1DEE8] px-4 pb-3 pt-2">
                 <div className="flex items-center gap-3">
@@ -248,7 +289,9 @@ export default function Header({ breadcrumb }) {
                     <p className="truncate text-sm font-semibold text-[#154F7A]">
                       {user.name}
                     </p>
-                    <p className="truncate text-xs text-[#6b7c8f]">{user.role}</p>
+                    <p className="truncate text-xs text-[#6b7c8f]">
+                      {user.role}
+                    </p>
                   </div>
                 </div>
               </div>

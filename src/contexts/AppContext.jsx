@@ -1,5 +1,7 @@
 /** Global app state (local JSON — no backend) */
-import { createContext, useCallback, useContext, useMemo, useState } from 'react'
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
+import { AppContext } from './useApp'
+import { fetchPincode } from '../utils/pincode'
 import casesData from '../data/cases.json'
 import dashboardData from '../data/dashboard.json'
 import userData from '../data/user.json'
@@ -12,17 +14,38 @@ import {
   getFileTypeLabel,
   padCaseNumber,
   parseLoanAmount,
+  isValidPincode,
 } from '../utils/helpers'
-
-const AppContext = createContext(null)
 
 export function AppProvider({ children }) {
   const [cases, setCases] = useState(casesData)
   const [notifications, setNotifications] = useState(notificationsData)
   const [toast, setToast] = useState(null)
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false)
-  // Footer save state: 'saved' | 'saving'
-  const [saveStatus, setSaveStatus] = useState('saved')
+  const nextCaseNumber = useRef(
+    Math.max(...casesData.map((item) => Number(item.caseNumber) || 0), 0) + 1,
+  )
+  const documentUrls = useRef(new Set())
+
+  useEffect(() => {
+    const current = new Set(
+      cases.flatMap((item) =>
+        (item.documents || []).map((doc) => doc.url).filter(Boolean),
+      ),
+    )
+    for (const url of documentUrls.current) {
+      if (!current.has(url)) URL.revokeObjectURL(url)
+    }
+    documentUrls.current = current
+  }, [cases])
+
+  useEffect(
+    () => () => {
+      for (const url of documentUrls.current) URL.revokeObjectURL(url)
+      documentUrls.current.clear()
+    },
+    [],
+  )
 
   const unreadCount = useMemo(
     () => notifications.filter((n) => !n.read).length,
@@ -41,25 +64,12 @@ export function AppProvider({ children }) {
     setNotifications((prev) => prev.map((n) => ({ ...n, read: true })))
   }, [])
 
-  /** Resolve city/state from local map or India Post API */
-  const lookupPincode = useCallback(async (pincode) => {
+  /** Use known locations offline; bound external lookups and allow cancellation. */
+  const lookupPincode = useCallback(async (pincode, signal) => {
     const key = String(pincode).trim()
+    if (!isValidPincode(key)) return null
     if (pincodes[key]) return pincodes[key]
-
-    try {
-      const res = await fetch(`https://api.postalpincode.in/pincode/${key}`)
-      const data = await res.json()
-      const office = data?.[0]?.Status === 'Success' ? data[0].PostOffice?.[0] : null
-      if (office) {
-        return {
-          city: office.District || office.Block || office.Name || '',
-          state: office.State || '',
-        }
-      }
-    } catch {
-      // Ignore network errors
-    }
-    return null
+    return fetchPincode(key, signal)
   }, [])
 
   const showToast = useCallback((payload) => {
@@ -78,8 +88,7 @@ export function AppProvider({ children }) {
   /** Create a new case */
   const createCase = useCallback(
     (form) => {
-      const nextNumber =
-        Math.max(...cases.map((c) => Number(c.caseNumber) || 0), 0) + 1
+      const nextNumber = nextCaseNumber.current++
       const padded = padCaseNumber(nextNumber)
       const amount = parseLoanAmount(form.loanAmount)
       const now = new Date()
@@ -87,8 +96,8 @@ export function AppProvider({ children }) {
       const newCase = {
         id: `case-${padded}`,
         caseNumber: padded,
-        caseName: `${padded}-${form.borrowerName}`,
-        borrowerName: form.borrowerName,
+        caseName: `${padded}-${form.borrowerName.trim()}`,
+        borrowerName: form.borrowerName.trim(),
         caseCreatedBy: userData.name,
         quoteGeneratedBy: 'N/A',
         loanAmount: amount,
@@ -117,9 +126,7 @@ export function AppProvider({ children }) {
             id: `act-${Date.now()}-1`,
             title: `Case ${padded} Created`,
             by: `${userData.name} (DSA)`,
-            timestamp: formatActivityTimestamp(
-              new Date(now.getTime() - 15 * 60 * 1000),
-            ),
+            timestamp: formatActivityTimestamp(now),
             dateGroup: 'Today',
           },
         ],
@@ -134,12 +141,11 @@ export function AppProvider({ children }) {
       })
       return newCase
     },
-    [cases, showToast],
+    [showToast],
   )
 
   /** Add co-applicant to a case */
   const addCoApplicant = useCallback((caseId, coApplicant) => {
-    setSaveStatus('saving')
     setCases((prev) =>
       prev.map((c) => {
         if (c.id !== caseId) return c
@@ -153,7 +159,7 @@ export function AppProvider({ children }) {
         return {
           ...c,
           coApplicant: {
-            name: coApplicant.name,
+            name: coApplicant.name.trim(),
             loanType: coApplicant.loanType,
             constitution: coApplicant.constitution,
             loanAmount: parseLoanAmount(coApplicant.loanAmount),
@@ -167,12 +173,10 @@ export function AppProvider({ children }) {
         }
       }),
     )
-    setTimeout(() => setSaveStatus('saved'), 800)
   }, [])
 
   /** Update applicant details */
   const updateApplicant = useCallback((caseId, form) => {
-    setSaveStatus('saving')
     const amount = parseLoanAmount(form.loanAmount)
     setCases((prev) =>
       prev.map((c) => {
@@ -199,12 +203,10 @@ export function AppProvider({ children }) {
         }
       }),
     )
-    setTimeout(() => setSaveStatus('saved'), 800)
   }, [])
 
   /** Update co-applicant details */
   const updateCoApplicant = useCallback((caseId, coApplicant) => {
-    setSaveStatus('saving')
     setCases((prev) =>
       prev.map((c) => {
         if (c.id !== caseId) return c
@@ -218,7 +220,7 @@ export function AppProvider({ children }) {
         return {
           ...c,
           coApplicant: {
-            name: coApplicant.name,
+            name: coApplicant.name.trim(),
             loanType: coApplicant.loanType,
             constitution: coApplicant.constitution,
             loanAmount: parseLoanAmount(coApplicant.loanAmount),
@@ -232,7 +234,6 @@ export function AppProvider({ children }) {
         }
       }),
     )
-    setTimeout(() => setSaveStatus('saved'), 800)
   }, [])
 
   /** Build document object from uploaded file */
@@ -252,7 +253,6 @@ export function AppProvider({ children }) {
   /** Upload a new document */
   const addDocument = useCallback(
     (caseId, file) => {
-      setSaveStatus('saving')
       const doc = buildDocFromFile(file)
       const entry = {
         id: `act-${Date.now()}`,
@@ -272,7 +272,6 @@ export function AppProvider({ children }) {
               },
         ),
       )
-      setTimeout(() => setSaveStatus('saved'), 600)
     },
     [buildDocFromFile],
   )
@@ -280,7 +279,6 @@ export function AppProvider({ children }) {
   /** Replace an existing document file */
   const updateDocument = useCallback(
     (caseId, docId, file) => {
-      setSaveStatus('saving')
       const next = buildDocFromFile(file)
       const entry = {
         id: `act-${Date.now()}`,
@@ -296,21 +294,18 @@ export function AppProvider({ children }) {
             ...c,
             documents: (c.documents || []).map((d) => {
               if (d.id !== docId) return d
-              if (d.url) URL.revokeObjectURL(d.url)
               return { ...next, id: docId }
             }),
             activityLog: [entry, ...(c.activityLog || [])],
           }
         }),
       )
-      setTimeout(() => setSaveStatus('saved'), 600)
     },
     [buildDocFromFile],
   )
 
   /** Delete a document */
   const deleteDocument = useCallback((caseId, docId) => {
-    setSaveStatus('saving')
     const entry = {
       id: `act-${Date.now()}`,
       title: 'Document Deleted',
@@ -321,8 +316,6 @@ export function AppProvider({ children }) {
     setCases((prev) =>
       prev.map((c) => {
         if (c.id !== caseId) return c
-        const target = (c.documents || []).find((d) => d.id === docId)
-        if (target?.url) URL.revokeObjectURL(target.url)
         return {
           ...c,
           documents: (c.documents || []).filter((d) => d.id !== docId),
@@ -330,7 +323,6 @@ export function AppProvider({ children }) {
         }
       }),
     )
-    setTimeout(() => setSaveStatus('saved'), 600)
   }, [])
 
   const value = useMemo(
@@ -343,8 +335,6 @@ export function AppProvider({ children }) {
       toast,
       sidebarCollapsed,
       setSidebarCollapsed,
-      saveStatus,
-      setSaveStatus,
       lookupPincode,
       showToast,
       dismissToast,
@@ -365,7 +355,6 @@ export function AppProvider({ children }) {
       unreadCount,
       toast,
       sidebarCollapsed,
-      saveStatus,
       lookupPincode,
       showToast,
       dismissToast,
@@ -383,10 +372,4 @@ export function AppProvider({ children }) {
   )
 
   return <AppContext.Provider value={value}>{children}</AppContext.Provider>
-}
-
-export function useApp() {
-  const ctx = useContext(AppContext)
-  if (!ctx) throw new Error('useApp must be used within AppProvider')
-  return ctx
 }

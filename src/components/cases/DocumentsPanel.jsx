@@ -12,13 +12,14 @@ import {
 } from 'lucide-react'
 import Button from '../ui/Button'
 import Modal from '../ui/Modal'
-import { useApp } from '../../contexts/AppContext'
+import { useApp } from '../../contexts/useApp'
 import { cn } from '../../utils/helpers'
 
 /** Icon for file type */
 function fileIcon(type = '') {
   const t = type.toUpperCase()
-  if (t === 'JPG' || t === 'JPEG' || t === 'PNG' || t === 'WEBP') return FileImage
+  if (t === 'JPG' || t === 'JPEG' || t === 'PNG' || t === 'WEBP')
+    return FileImage
   if (t === 'PDF') return FileText
   return File
 }
@@ -132,12 +133,7 @@ function DocumentPreview({ doc }) {
 }
 
 export default function DocumentsPanel({ caseData }) {
-  const {
-    addDocument,
-    updateDocument,
-    deleteDocument,
-    showToast,
-  } = useApp()
+  const { addDocument, updateDocument, deleteDocument, showToast } = useApp()
   const addInputRef = useRef(null)
   const replaceInputRef = useRef(null)
   const replaceIdRef = useRef(null)

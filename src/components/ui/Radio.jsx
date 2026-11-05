@@ -22,7 +22,7 @@ export default function Radio({
           return (
             <label
               key={opt.id || opt.label}
-              className="inline-flex cursor-pointer items-center gap-3 text-sm text-[#1a2b3c]"
+              className="inline-flex cursor-pointer items-center gap-3 rounded-md text-sm text-[#1a2b3c] focus-within:outline-2 focus-within:outline-offset-4 focus-within:outline-brand-500"
             >
               <span
                 className={cn(
@@ -39,6 +39,7 @@ export default function Radio({
               <input
                 type="radio"
                 name={name}
+                value={opt.label}
                 className="sr-only"
                 checked={selected}
                 onChange={() => onChange?.(opt.label)}

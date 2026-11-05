@@ -1,9 +1,11 @@
 /** Text input */
+import { useId } from 'react'
 import { cn } from '../../utils/helpers'
 
 export default function Input({
   label,
   error,
+  hint,
   className,
   inputClassName,
   prefix,
@@ -11,7 +13,8 @@ export default function Input({
   id,
   ...props
 }) {
-  const inputId = id || props.name
+  const generatedId = useId()
+  const inputId = id || props.name || generatedId
 
   return (
     <div className={cn('flex flex-col gap-1.5', className)}>
@@ -32,6 +35,8 @@ export default function Input({
         <input
           id={inputId}
           readOnly={readOnly}
+          aria-invalid={error ? true : undefined}
+          aria-describedby={error || hint ? `${inputId}-message` : undefined}
           className={cn(
             'h-11 w-full rounded-xl border border-[#c5d4e3] bg-white px-3 text-sm text-ink placeholder:text-muted/70 transition-shadow',
             'focus:border-[#2b7de9] focus:outline-none focus:ring-2 focus:ring-[#2b7de9]/20',
@@ -44,7 +49,14 @@ export default function Input({
           {...props}
         />
       </div>
-      {error ? <p className="text-xs text-red-500">{error}</p> : null}
+      {error || hint ? (
+        <p
+          id={`${inputId}-message`}
+          className={error ? 'text-xs text-red-600' : 'text-xs text-muted'}
+        >
+          {error || hint}
+        </p>
+      ) : null}
     </div>
   )
 }

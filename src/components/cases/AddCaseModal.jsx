@@ -1,18 +1,17 @@
 /** Add Case modal */
-import { useEffect, useMemo, useState } from 'react'
+import { useEffect, useRef } from 'react'
 import Button from '../ui/Button'
 import Input from '../ui/Input'
 import Modal from '../ui/Modal'
 import Radio from '../ui/Radio'
 import Select from '../ui/Select'
-import { useApp } from '../../contexts/AppContext'
+import { useApp } from '../../contexts/useApp'
 import loanTypes from '../../data/loanTypes.json'
 import constitutions from '../../data/constitutions.json'
 import models from '../../data/models.json'
-import {
-  formatLoanAmountInput,
-  isValidPincode,
-} from '../../utils/helpers'
+import { formatLoanAmountInput } from '../../utils/helpers'
+import useApplicantForm from '../../hooks/useApplicantForm'
+import LocationFeedback from '../applicant/LocationFeedback'
 
 const emptyForm = {
   borrowerName: '',
@@ -26,56 +25,29 @@ const emptyForm = {
 }
 
 export default function AddCaseModal({ open, onClose, onCreated }) {
-  const { createCase, lookupPincode } = useApp()
-  const [form, setForm] = useState(emptyForm)
+  const submitted = useRef(false)
+  const { createCase } = useApp()
+  const {
+    form,
+    update,
+    reset,
+    isValid,
+    amountError,
+    pincodeError,
+    loading,
+    retry,
+  } = useApplicantForm(emptyForm)
 
   useEffect(() => {
-    if (open) setForm(emptyForm)
-  }, [open])
-
-  useEffect(() => {
-    let cancelled = false
-    if (!isValidPincode(form.pincode)) {
-      setForm((prev) =>
-        prev.city || prev.state ? { ...prev, city: '', state: '' } : prev,
-      )
-      return
+    if (open) {
+      submitted.current = false
+      reset()
     }
-    ;(async () => {
-      const match = await lookupPincode(form.pincode)
-      if (cancelled) return
-      if (match) {
-        setForm((prev) => ({ ...prev, city: match.city, state: match.state }))
-      } else {
-        setForm((prev) =>
-          prev.city || prev.state ? { ...prev, city: '', state: '' } : prev,
-        )
-      }
-    })()
-    return () => {
-      cancelled = true
-    }
-  }, [form.pincode, lookupPincode])
-
-  const isValid = useMemo(() => {
-    return (
-      form.borrowerName.trim() &&
-      form.loanType &&
-      form.constitution &&
-      form.loanAmount &&
-      isValidPincode(form.pincode) &&
-      form.city &&
-      form.state &&
-      form.model
-    )
-  }, [form])
-
-  const update = (key, value) => {
-    setForm((prev) => ({ ...prev, [key]: value }))
-  }
+  }, [open, reset])
 
   const handleSubmit = () => {
-    if (!isValid) return
+    if (!isValid || submitted.current) return
+    submitted.current = true
     const created = createCase(form)
     onClose?.()
     onCreated?.(created)
@@ -124,6 +96,9 @@ export default function AddCaseModal({ open, onClose, onCreated }) {
           placeholder="0"
           prefix="₹"
           value={form.loanAmount}
+          error={amountError}
+          inputMode="numeric"
+          maxLength={30}
           onChange={(e) =>
             update('loanAmount', formatLoanAmountInput(e.target.value))
           }
@@ -137,6 +112,14 @@ export default function AddCaseModal({ open, onClose, onCreated }) {
           placeholder="Enter Pincode"
           value={form.pincode}
           maxLength={6}
+          inputMode="numeric"
+          autoComplete="postal-code"
+          aria-busy={loading}
+          error={
+            form.pincode && form.pincode.length !== 6
+              ? 'Enter a 6-digit pincode.'
+              : undefined
+          }
           onChange={(e) =>
             update('pincode', e.target.value.replace(/\D/g, '').slice(0, 6))
           }
@@ -154,6 +137,12 @@ export default function AddCaseModal({ open, onClose, onCreated }) {
           readOnly
         />
       </div>
+
+      <LocationFeedback
+        loading={loading}
+        error={pincodeError}
+        onRetry={retry}
+      />
 
       <div className="mt-5">
         <Radio

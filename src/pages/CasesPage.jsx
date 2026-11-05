@@ -9,7 +9,7 @@ import Pagination from '../components/ui/Pagination'
 import ScrollInset from '../components/ui/ScrollInset'
 import CasesTable from '../components/cases/CasesTable'
 import AddCaseModal from '../components/cases/AddCaseModal'
-import { useApp } from '../contexts/AppContext'
+import { useApp } from '../contexts/useApp'
 import statusOptions from '../data/status.json'
 
 const PAGE_SIZE = 15
@@ -99,7 +99,11 @@ export default function CasesPage() {
           </div>
 
           <div className="shrink-0 px-4 py-4 md:px-5">
-            <Pagination page={page} totalPages={totalPages} onChange={setPage} />
+            <Pagination
+              page={page}
+              totalPages={totalPages}
+              onChange={setPage}
+            />
           </div>
         </section>
       </ScrollInset>

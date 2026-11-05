@@ -1,8 +1,8 @@
 /** Toast notification */
 import { useEffect } from 'react'
-import { Check, X } from 'lucide-react'
+import { Check, Info, X } from 'lucide-react'
 import { Link } from 'react-router-dom'
-import { useApp } from '../../contexts/AppContext'
+import { useApp } from '../../contexts/useApp'
 
 export default function Toast() {
   const { toast, dismissToast } = useApp()
@@ -14,12 +14,18 @@ export default function Toast() {
   }, [toast, dismissToast])
 
   if (!toast) return null
+  const Icon = toast.type === 'info' ? Info : Check
 
   return (
-    <div className="pointer-events-none fixed bottom-6 right-6 z-[60] w-[min(100%-2rem,440px)] animate-toast-in">
+    <div
+      role="status"
+      aria-live="polite"
+      aria-atomic="true"
+      className="pointer-events-none fixed bottom-4 right-4 z-[60] w-[calc(100%-2rem)] max-w-[440px] animate-toast-in"
+    >
       <div className="pointer-events-auto flex items-center gap-3 rounded-lg border border-[#9ad4b3] bg-[#e8f8ef] px-4 py-3 shadow-md">
         <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#22a45c]">
-          <Check className="h-3 w-3 text-white" strokeWidth={3} />
+          <Icon className="h-3 w-3 text-white" strokeWidth={3} />
         </span>
         <p className="flex-1 text-sm font-medium text-[#1a7a45]">
           {toast.message}

@@ -32,6 +32,7 @@ export default function ScrollInset({
   className,
   children,
   style,
+  viewportProps,
   ...props
 }) {
   const viewportRef = useRef(null)
@@ -109,6 +110,7 @@ export default function ScrollInset({
       className={cn('relative min-h-0 overflow-hidden', outer)}
     >
       <div
+        {...viewportProps}
         ref={viewportRef}
         className={cn(
           'scrollbar-none overflow-auto overscroll-contain',

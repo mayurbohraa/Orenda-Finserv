@@ -10,8 +10,9 @@ import ScrollInset from '../components/ui/ScrollInset'
 import CasesTable from '../components/cases/CasesTable'
 import AddCaseModal from '../components/cases/AddCaseModal'
 import Sparkline from '../components/cases/Sparkline'
-import { useApp } from '../contexts/AppContext'
+import { useApp } from '../contexts/useApp'
 import statusOptions from '../data/status.json'
+import { downloadCases } from '../utils/csv'
 import { cn, formatWelcomeDate } from '../utils/helpers'
 
 const PAGE_SIZE = 5
@@ -26,9 +27,7 @@ function MetricColumn({ metric }) {
         <span
           className={cn(
             'inline-flex items-center gap-1 rounded-full px-2.5 py-0.5 text-xs font-semibold',
-            up
-              ? 'bg-[#e8f8ef] text-[#16a34a]'
-              : 'bg-[#fde8e8] text-[#ef4444]',
+            up ? 'bg-[#e8f8ef] text-[#16a34a]' : 'bg-[#fde8e8] text-[#ef4444]',
           )}
         >
           <span aria-hidden>{up ? '↑' : '↓'}</span>
@@ -51,7 +50,7 @@ function MetricColumn({ metric }) {
 }
 
 export default function DashboardPage() {
-  const { user, dashboard, cases } = useApp()
+  const { user, dashboard, cases, showToast } = useApp()
   const [query, setQuery] = useState('')
   const [status, setStatus] = useState('All')
   const [page, setPage] = useState(1)
@@ -111,22 +110,24 @@ export default function DashboardPage() {
         <section className="mt-6 rounded-2xl border border-[#D1DEE8] bg-white">
           <div className="p-4 md:p-5">
             <div className="mb-4">
-              <h2 className="text-lg font-semibold text-[#154F7A]">All Cases</h2>
+              <h2 className="text-lg font-semibold text-[#154F7A]">
+                All Cases
+              </h2>
               <p className="text-sm text-muted">
                 Track the status and progress of every case.
               </p>
             </div>
 
-            <div className="mb-4 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+            <div className="mb-4 flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
               <Search
                 value={query}
                 onChange={(v) => {
                   setQuery(v)
                   setPage(1)
                 }}
-                className="w-full sm:max-w-xs lg:max-w-sm"
+                className="w-full sm:min-w-[140px] sm:flex-1 lg:max-w-sm"
               />
-              <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
+              <div className="flex shrink-0 flex-col gap-3 sm:flex-row sm:items-center">
                 <Select
                   options={filterOptions}
                   value={status}
@@ -145,6 +146,14 @@ export default function DashboardPage() {
                   size="md"
                   leftIcon={<Download className="h-4 w-4" />}
                   className="h-10 whitespace-nowrap"
+                  disabled={filtered.length === 0}
+                  onClick={() => {
+                    downloadCases(filtered, statusOptions)
+                    showToast({
+                      type: 'success',
+                      message: `Exported ${filtered.length} matching cases to CSV.`,
+                    })
+                  }}
                 >
                   Download CSV
                 </Button>
@@ -157,7 +166,11 @@ export default function DashboardPage() {
               startIndex={(page - 1) * PAGE_SIZE}
             />
 
-            <Pagination page={page} totalPages={totalPages} onChange={setPage} />
+            <Pagination
+              page={page}
+              totalPages={totalPages}
+              onChange={setPage}
+            />
           </div>
         </section>
       </ScrollInset>

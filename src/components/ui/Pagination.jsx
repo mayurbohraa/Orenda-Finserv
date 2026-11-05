@@ -22,12 +22,7 @@ function buildPages(page, totalPages) {
   return out
 }
 
-export default function Pagination({
-  page,
-  totalPages,
-  onChange,
-  className,
-}) {
+export default function Pagination({ page, totalPages, onChange, className }) {
   if (totalPages <= 1) return null
 
   const pages = buildPages(page, totalPages)
@@ -35,7 +30,7 @@ export default function Pagination({
   return (
     <nav
       className={cn(
-        'flex shrink-0 items-center justify-center gap-1.5 pt-4',
+        'flex shrink-0 flex-wrap items-center justify-center gap-1.5 pt-4',
         className,
       )}
       aria-label="Pagination"
@@ -60,6 +55,7 @@ export default function Pagination({
             key={p}
             type="button"
             onClick={() => onChange(p)}
+            aria-current={p === page ? 'page' : undefined}
             className={cn(
               'flex h-8 min-w-8 items-center justify-center rounded-lg px-2.5 text-sm font-medium transition-colors',
               p === page

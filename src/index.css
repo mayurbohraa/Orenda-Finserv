@@ -1,11 +1,11 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 /* Brand and theme tokens */
 @theme {
-  --font-sans: "DM Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: 'DM Sans', ui-sans-serif, system-ui, sans-serif;
 
-  --color-brand-900: #0F3D5E;
-  --color-brand-800: #154F7A;
+  --color-brand-900: #0f3d5e;
+  --color-brand-800: #154f7a;
   --color-brand-700: #1a628f;
   --color-brand-600: #1a6fa0;
   --color-brand-500: #2b8bc0;
@@ -15,7 +15,7 @@
   --color-surface: #f4f7fb;
   --color-ink: #1a2b3c;
   --color-muted: #6b7c8f;
-  --color-border: #D1DEE8;
+  --color-border: #d1dee8;
   --color-link: #2b7de9;
 
   --color-status-pending-bg: #eef1f5;
@@ -140,4 +140,19 @@ button:disabled {
 
 .animate-slide-up {
   animation: slide-up 0.22s ease-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-brand-500);
+  outline-offset: 3px;
 }

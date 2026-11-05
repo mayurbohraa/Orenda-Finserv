@@ -7,7 +7,7 @@ import {
   Home,
   LifeBuoy,
 } from 'lucide-react'
-import { useApp } from '../../contexts/AppContext'
+import { useApp } from '../../contexts/useApp'
 import { cn } from '../../utils/helpers'
 import ScrollInset from '../ui/ScrollInset'
 
@@ -37,23 +37,29 @@ const navItems = [
 ]
 
 export default function Sidebar() {
-  const { sidebarCollapsed, setSidebarCollapsed } = useApp()
+  const { sidebarCollapsed, setSidebarCollapsed, showToast } = useApp()
 
   return (
     <aside
       className={cn(
         'relative z-20 flex h-full shrink-0 flex-col border-r border-[#D1DEE8] bg-white transition-[width] duration-200',
-        sidebarCollapsed ? 'w-[72px]' : 'w-[240px]',
+        'w-14 sm:w-[72px]',
+        sidebarCollapsed ? 'lg:w-[72px]' : 'lg:w-[240px]',
       )}
     >
-      <div className="flex items-center justify-between gap-2 px-3 py-4">
+      <div className="flex items-center justify-between gap-2 px-2 py-4 lg:px-3">
         <div className="min-w-0 flex-1">
-          <OrendaLogo collapsed={sidebarCollapsed} />
+          <div className="lg:hidden">
+            <OrendaLogo collapsed />
+          </div>
+          <div className="hidden lg:block">
+            <OrendaLogo collapsed={sidebarCollapsed} />
+          </div>
         </div>
         <button
           type="button"
           onClick={() => setSidebarCollapsed((v) => !v)}
-          className="rounded-md p-1.5 text-muted hover:bg-brand-50 hover:text-brand-800"
+          className="hidden rounded-md p-1.5 text-muted hover:bg-brand-50 hover:text-brand-800 lg:block"
           aria-label={sidebarCollapsed ? 'Expand sidebar' : 'Collapse sidebar'}
         >
           {sidebarCollapsed ? (
@@ -66,7 +72,7 @@ export default function Sidebar() {
 
       <ScrollInset
         as="nav"
-        className="mt-1 flex min-h-0 flex-1 flex-col gap-1 px-3"
+        className="mt-1 flex min-h-0 flex-1 flex-col gap-1 px-2 lg:px-3"
       >
         {navItems.map((item) => {
           const Icon = item.icon
@@ -76,9 +82,10 @@ export default function Sidebar() {
               to={item.to}
               end={item.end}
               title={item.label}
+              aria-label={item.label}
               className={({ isActive }) =>
                 cn(
-                  'flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium transition-colors',
+                  'flex items-center justify-center gap-3 rounded-lg px-2 py-2.5 text-sm font-medium transition-colors lg:justify-start lg:px-3',
                   isActive
                     ? 'bg-[#154F7A] text-white'
                     : 'text-[#4a5d70] hover:bg-brand-50',
@@ -87,23 +94,35 @@ export default function Sidebar() {
               }
             >
               <Icon className="h-[18px] w-[18px] shrink-0" strokeWidth={1.75} />
-              {!sidebarCollapsed ? item.label : null}
+              {!sidebarCollapsed ? (
+                <span className="hidden lg:inline">{item.label}</span>
+              ) : null}
             </NavLink>
           )
         })}
       </ScrollInset>
 
-      <div className="mt-auto border-t border-[#D1DEE8] px-3 py-4">
+      <div className="mt-auto border-t border-[#D1DEE8] px-2 py-4 lg:px-3">
         <button
           type="button"
+          onClick={() =>
+            showToast({
+              type: 'info',
+              message:
+                'Support is unavailable in this demo. No support request has been sent.',
+            })
+          }
+          aria-label="Support"
           className={cn(
-            'flex w-full items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium text-[#4a5d70] hover:bg-brand-50',
+            'flex w-full items-center justify-center gap-3 rounded-lg px-2 py-2.5 text-sm font-medium text-[#4a5d70] hover:bg-brand-50 lg:justify-start lg:px-3',
             sidebarCollapsed && 'justify-center px-2',
           )}
           title="Support"
         >
           <LifeBuoy className="h-[18px] w-[18px] shrink-0" strokeWidth={1.75} />
-          {!sidebarCollapsed ? 'Support' : null}
+          {!sidebarCollapsed ? (
+            <span className="hidden lg:inline">Support</span>
+          ) : null}
         </button>
       </div>
     </aside>

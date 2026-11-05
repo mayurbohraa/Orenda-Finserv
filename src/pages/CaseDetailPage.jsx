@@ -1,7 +1,7 @@
 /** Case detail page */
 import { useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
-import { ArrowRight, Check, Loader2, UserPlus } from 'lucide-react'
+import { ArrowRight, Check, Pencil, UserPlus } from 'lucide-react'
 import Header from '../components/layout/Header'
 import Button from '../components/ui/Button'
 import ScrollInset from '../components/ui/ScrollInset'
@@ -11,17 +11,22 @@ import CoApplicantPreview from '../components/applicant/CoApplicantPreview'
 import CoApplicantForm from '../components/applicant/CoApplicantForm'
 import ActivityLogPanel from '../components/applicant/ActivityLogPanel'
 import DocumentsPanel from '../components/cases/DocumentsPanel'
-import { useApp } from '../contexts/AppContext'
+import { useApp } from '../contexts/useApp'
 import { formatIndianCurrency } from '../utils/helpers'
 
 export default function CaseDetailPage() {
   const { id } = useParams()
-  const { getCaseById, saveStatus } = useApp()
+  return <CaseDetails key={id} id={id} />
+}
+
+function CaseDetails({ id }) {
+  const { getCaseById } = useApp()
   const caseData = getCaseById(id)
   const [addingCoApp, setAddingCoApp] = useState(false)
   const [editingApplicant, setEditingApplicant] = useState(false)
   const [editingCoApp, setEditingCoApp] = useState(false)
   const [activeTab, setActiveTab] = useState('applicant')
+  const editing = editingApplicant || editingCoApp || addingCoApp
 
   if (!caseData) {
     return (
@@ -61,7 +66,9 @@ export default function CaseDetailPage() {
               Cases
             </Link>
             <span className="mx-1.5">/</span>
-            <span className="font-medium text-ink">{caseData.borrowerName}</span>
+            <span className="font-medium text-ink">
+              {caseData.borrowerName}
+            </span>
           </span>
         }
       />
@@ -70,7 +77,7 @@ export default function CaseDetailPage() {
         <ScrollInset className="min-h-0 flex-1 p-4 pb-6 md:p-6">
           <div className="rounded-2xl border border-[#D1DEE8] bg-white p-4 md:p-5">
             <div className="mb-4">
-              <h1 className="text-2xl font-bold text-[#154F7A] md:text-[28px]">
+              <h1 className="break-words text-2xl font-bold text-[#154F7A] md:text-[28px]">
                 {caseData.borrowerName}
               </h1>
               <p className="mt-1 text-sm text-[#6b7c8f]">
@@ -94,6 +101,8 @@ export default function CaseDetailPage() {
                   key={tab.id}
                   type="button"
                   onClick={() => setActiveTab(tab.id)}
+                  disabled={editing && tab.id !== activeTab}
+                  aria-pressed={activeTab === tab.id}
                   className={
                     activeTab === tab.id
                       ? 'border-b-2 border-[#154F7A] pb-3 text-sm font-semibold text-[#154F7A]'
@@ -132,9 +141,7 @@ export default function CaseDetailPage() {
                   </div>
                 </aside>
 
-                {!editingApplicant &&
-                !caseData.coApplicant &&
-                !addingCoApp ? (
+                {!editingApplicant && !caseData.coApplicant && !addingCoApp ? (
                   <div className="min-w-0 lg:col-start-1">
                     <Button
                       variant="tertiary"
@@ -192,18 +199,23 @@ export default function CaseDetailPage() {
           </div>
         </ScrollInset>
 
-        <footer className="flex shrink-0 items-center justify-end gap-4 border-t border-[#D1DEE8] bg-white px-4 py-4 md:px-6">
-          <div className="flex items-center gap-2 text-sm">
-            {saveStatus === 'saving' ? (
+        <footer className="flex shrink-0 flex-col items-stretch justify-end gap-3 border-t sm:flex-row sm:items-center sm:gap-4 border-[#D1DEE8] bg-white px-4 py-4 md:px-6">
+          <div
+            className="flex items-center gap-2 text-xs sm:text-sm"
+            role="status"
+          >
+            {editing ? (
               <>
-                <Loader2 className="h-4 w-4 animate-spin text-muted" />
-                <span className="text-muted">Saving...</span>
+                <Pencil className="h-4 w-4 shrink-0 text-muted" />
+                <span className="text-muted">
+                  Save or cancel your edits to continue
+                </span>
               </>
             ) : (
               <>
-                <Check className="h-4 w-4 text-[#16a34a]" strokeWidth={2.5} />
+                <Check className="h-4 w-4 shrink-0 text-[#16a34a]" />
                 <span className="font-medium text-[#16a34a]">
-                  All changes saved
+                  Saved for this session
                 </span>
               </>
             )}
@@ -212,6 +224,7 @@ export default function CaseDetailPage() {
             <Button
               rightIcon={<ArrowRight className="h-4 w-4" />}
               onClick={() => setActiveTab('documents')}
+              disabled={editing}
             >
               Continue to Documents
             </Button>
