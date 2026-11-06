@@ -6,9 +6,9 @@ Orenda Finserv CRM is a frontend loan-case management demo for Direct Selling Ag
 
 ## Project Preview
 
-<img src="public/project-preview.webp" alt="Orenda Finserv CRM showcase featuring the dashboard, responsive layouts, applicant details, and supporting document views" width="520">
+<img src="public/project-preview.webp" alt="Orenda Finserv CRM showcase featuring the dashboard, responsive layouts, applicant details, and supporting document views" width="100%">
 
-The collage combines application captures with presentation and branding mockups.
+Application and brand preview.
 
 ## Key Features
 
@@ -19,11 +19,13 @@ The collage combines application captures with presentation and branding mockups
 - **CSV export:** download all matching dashboard cases, including records beyond the visible page, with quoted cells and spreadsheet-formula protection.
 - **Responsive interface:** compact navigation on smaller screens, keyboard-operated dropdowns, focus-managed dialogs, notifications, and status feedback.
 
-## Live Website
+Cases, edits, notifications, and uploaded files live in memory and reset on refresh. Dashboard metrics and historical records are sample data. There is no database, authentication service, server-side file storage, or interactive loan approval/disbursal workflow. Support and Logout display notices explaining their demo behavior. Unknown PIN codes need network access; lookup failures provide retry feedback.
 
-[https://orenda-finserv.vercel.app/](https://orenda-finserv.vercel.app/)
+## Live Website & Related Repository
 
-## Technology Stack
+https://orenda-finserv.vercel.app/
+
+## Tech Stack
 
 | Area                | Technology                                    |
 | ------------------- | --------------------------------------------- |
@@ -35,22 +37,24 @@ The collage combines application captures with presentation and branding mockups
 | Icons and utilities | Lucide React, clsx, tailwind-merge            |
 | Checks              | Oxlint, Node.js test runner                   |
 
-## Getting Started
+## Prerequisites
 
-Use Node.js matching `^20.19.0 || >=22.12.0` and npm. Node.js 24 was used for verification.
+Node.js matching `^20.19.0 || >=22.12.0` and npm. Google Fonts and the fallback postal lookup need network access.
 
-Run from the repository root:
+## Installation & Setup
 
-```bash
-npm ci
-npm run dev
-```
+1. Open the repository root.
+2. Install the locked dependencies.
 
-Open the URL printed by Vite, usually `http://localhost:5173/`.
+   ```sh
+   npm ci
+   ```
 
-No environment variables, API keys, or backend setup are required. Fonts load from Google Fonts. PIN codes absent from the bundled location map use an existing public postal lookup service.
+3. The application uses bundled JSON fixtures and component state. No environment variables or service credentials are required.
 
-## Commands
+## Running Locally
+
+Start development with `npm run dev` and open the URL printed by Vite, normally `http://localhost:5173/`.
 
 | Command           | Purpose                                    |
 | ----------------- | ------------------------------------------ |
@@ -58,10 +62,23 @@ No environment variables, API keys, or backend setup are required. Fonts load fr
 | `npm run build`   | Create a production build in `dist/`       |
 | `npm run preview` | Serve an existing production build locally |
 | `npm run lint`    | Run Oxlint                                 |
-| `npm test`        | Run seven focused regression tests         |
+| `npm test`        | Run focused regression tests         |
 
 For a production preview, run `npm run build` before `npm run preview`. The included `vercel.json` supplies the single-page application fallback for direct links to case routes.
 
-## Demo Scope
+## Project Structure
 
-Cases, edits, notifications, and uploaded files live in memory and reset on refresh. Dashboard metrics and historical records are sample data. There is no database, authentication service, server-side file storage, or interactive loan approval/disbursal workflow. Support and Logout display notices explaining their demo behavior. Unknown PIN codes need network access; lookup failures provide retry feedback.
+```text
+public/                 # Public assets and README preview
+src/
+├── components/         # Forms, dialogs, and shared controls
+├── contexts/           # Shared application state
+├── data/               # JSON fixtures
+├── hooks/              # Applicant form behavior
+├── pages/              # Dashboard, cases, and case details
+├── utils/              # CSV, location, and value helpers
+├── App.jsx             # Routing and application composition
+└── index.js            # React entry
+tests/                  # Regression tests
+vercel.json             # SPA route fallback
+```
